@@ -1,0 +1,19 @@
+# build output
+node_modules/
+__pycache__/
+.pytest_cache/
+build/
+out/
+android/.gradle/
+android/app/build/
+android/local.properties
+ios/.build/
+ios/CompanionCore/.build/
+ios/*.xcodeproj/
+ios/build.log
+# signing material never goes in the repo
+*.jks
+*.keystore
+*.p12
+*.mobileprovision
+*.pfx

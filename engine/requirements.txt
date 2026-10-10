@@ -1,0 +1,19 @@
+# PAi Health engine — all permissive licenses (no GPL/AGPL), safe to ship commercially.
+pypdf>=5.0            # BSD-3      PDF structure, encryption check
+pdfplumber>=0.11      # MIT        PDF text layer (pdfminer.six, MIT)
+pypdfium2>=4.0        # Apache-2/BSD  render PDF pages for OCR and the page checker
+pytesseract>=0.3.10   # Apache-2   OCR bridge; needs the Tesseract binary (Apache-2), bundled in the installer
+Pillow>=10            # HPND       images, multi-page TIFF faxes
+python-docx>=1.1      # MIT        Word .docx
+odfpy>=1.4            # Apache-2   OpenDocument .odt
+openpyxl>=3.1         # MIT        Excel .xlsx
+defusedxml>=0.7       # PSF        safe XML for C-CDA
+charset-normalizer>=3 # MIT        legacy text encodings
+requests>=2.31        # Apache-2   HTTPS-only document download (ingest/download.py)
+# Optional: pillow-heif (BSD-3; libheif is LGPL) for iPhone HEIC photos.
+# Deliberately not used: PyMuPDF (AGPL), extract-msg (GPL-3).
+# Optional: bleak>=0.22,<2  (MIT)  Bluetooth LE capture of standard health devices (devices/bluetooth)
+segno>=1.6            # BSD-3      QR code for pairing the phone companion
+cryptography>=42      # Apache-2/BSD  vault encryption (AES-256-GCM, scrypt, HKDF)
+tzdata>=2024.1      # Apache-2   IANA time zones (Windows has none built in; Fitbit/Garmin/CSV imports need them)
+psutil>=5.9           # BSD-3      RAM/disk check for private AI options

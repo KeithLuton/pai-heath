@@ -1,0 +1,15 @@
+Medicare Summary Notice for Part B (Medical Insurance)
+THIS IS NOT A BILL
+Name: JOHN R EXAMPLE                                Notice Date: September 3, 2026
+Medicare Number: 1EG4-TE5-MK72
+
+Claim Number: 12026245012345                        Provider: Lakeside Cardiology Associates
+
+Service      Service Provided &         Amount      Medicare-   Amount      Maximum You   See
+Date         Billing Code               Provider    Approved    Medicare    May Be        Notes
+                                        Charged     Amount      Paid        Billed
+08/12/2026   Echocardiogram (93306)     $1,250.00   $212.43     $169.94     $42.49        A
+08/12/2026   Office visit (99214)        $310.00    $128.51     $102.81     $25.70
+Total                                   $1,560.00   $340.94     $272.75     $68.19
+
+If you disagree, you must file an appeal by March 2, 2027.

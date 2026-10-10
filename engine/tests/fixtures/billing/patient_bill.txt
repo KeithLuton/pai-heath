@@ -1,0 +1,12 @@
+Riverbend Family Clinic                        PATIENT STATEMENT
+Statement Date: 09/20/2026                     Account Number: 448812
+Patient: JANE Q SAMPLE                         Due Date: 10/15/2026
+Guarantor: JANE Q SAMPLE
+
+Service     Description              Code     Charges    Insurance    Adjustments    Amount
+Date                                                     Payments
+08/28/2026  Office visit             99213     210.00    116.80         64.00         29.20
+08/28/2026  Blood draw               36415      35.00     10.40         22.00          2.60
+09/02/2026  Patient payment                                                          (10.00)
+
+Balance Due: $21.80

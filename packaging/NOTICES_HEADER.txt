@@ -1,0 +1,26 @@
+PAi Health — third-party notices
+Copyright (c) PAi Luton. All rights reserved.
+
+PAi Health includes the open-source components listed below, each under its own license.
+Libraries shipped as separate DLLs with Tesseract keep their own licenses (some LGPL);
+they are dynamically linked and may be replaced by the user.
+
+Literature data
+---------------
+This product uses publicly available data from the U.S. National Library of Medicine (NLM), National Institutes of Health, Department of Health and Human Services; NLM is not responsible for the product and does not endorse or recommend this or any other product.
+(MEDLINE/PubMed citation data and MeSH. No abstracts are included.)
+
+Bundled programs
+----------------
+- llama.cpp (llama-server) — MIT License — https://github.com/ggml-org/llama.cpp
+- Tesseract OCR — Apache License 2.0 — https://github.com/tesseract-ocr/tesseract
+  (Windows build by Universitätsbibliothek Mannheim)
+- Microsoft Edge WebView2 Runtime — part of Windows; not redistributed.
+
+User interface
+--------------
+- React, React DOM — MIT License
+- Vite build output — MIT License
+
+Python components
+-----------------

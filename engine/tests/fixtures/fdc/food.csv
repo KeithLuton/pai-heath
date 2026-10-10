@@ -1,0 +1,21 @@
+fdc_id,data_type,description,food_category_id,publication_date
+1001,sr_legacy_food,"Oats, rolled, regular or quick, dry",8,2019-04-01
+1002,sr_legacy_food,"Blueberries, raw",9,2019-04-01
+1003,sr_legacy_food,"Egg, whole, raw, fresh",1,2019-04-01
+1004,sr_legacy_food,"Milk, whole, 3.25% milkfat",1,2019-04-01
+1005,sr_legacy_food,"Spinach, raw",11,2019-04-01
+1006,sr_legacy_food,"Bananas, raw",9,2019-04-01
+1007,sr_legacy_food,"Coffee, brewed, prepared with tap water",14,2019-04-01
+1008,sr_legacy_food,"Chicken, broiler or fryers, breast, meat only, cooked, roasted",5,2019-04-01
+1009,sr_legacy_food,"Apples, raw, with skin",9,2019-04-01
+1010,sr_legacy_food,"Fish, salmon, Atlantic, wild, raw",15,2019-04-01
+1011,foundation_food,"Yogurt, Greek, plain, whole milk",1,2020-10-30
+1012,sr_legacy_food,"Broccoli, raw",11,2019-04-01
+1013,sr_legacy_food,"Orange juice, raw",9,2019-04-01
+1014,sr_legacy_food,"Potatoes, baked, flesh and skin, without salt",11,2019-04-01
+1015,sr_legacy_food,"Nuts, almonds",12,2019-04-01
+1016,sr_legacy_food,"Rice, white, long-grain, regular, raw",8,2019-04-01
+1017,sr_legacy_food,"Oil, olive, salad or cooking",4,2019-04-01
+1018,sr_legacy_food,"Bread, whole-wheat, commercially prepared",8,2019-04-01
+1019,sr_legacy_food,"Cheese, cheddar",1,2019-04-01
+1020,sr_legacy_food,"Tomatoes, red, ripe, raw, year round average",11,2019-04-01

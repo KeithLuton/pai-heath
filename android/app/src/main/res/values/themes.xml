@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.PAiHealthCompanion" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#0B1B33</item>
+        <item name="colorPrimaryVariant">#13294A</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#14A096</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+    </style>
+</resources>

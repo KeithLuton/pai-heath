@@ -1,0 +1,15 @@
+ACME HEALTH PLAN                                   EXPLANATION OF BENEFITS
+                                                   THIS IS NOT A BILL
+Member Name:  JANE Q SAMPLE                        Statement Date: 09/15/2026
+Member ID:    XYZ123456789                         Group Number: 55501
+Claim Number: CLM-2026-0004417
+Provider:     Riverbend Family Clinic
+
+Date of     Service                 Code      Amount      Plan        Plan       You
+Service     Description                       Billed      Discount    Paid       Owe
+08/28/2026  Office visit            99213     $210.00     $64.00      $116.80    $29.20
+08/28/2026  Blood draw              36415      $35.00     $22.00       $10.40    $2.60
+08/28/2026  Blood draw              36415      $35.00     $22.00       $10.40    $2.60
+Totals                                        $280.00    $108.00      $137.60    $34.40
+
+If you disagree with this decision, you may file an appeal within 180 days of the statement date.

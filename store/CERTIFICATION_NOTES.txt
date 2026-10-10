@@ -1,0 +1,27 @@
+PAi Health — Notes for certification (paste into Partner Center > Submission options > Notes for certification)
+
+WHAT IT IS
+A desktop health-records organizer and tracker. Python engine packaged with the Desktop Bridge (MSIX). The UI is a local web page shown in a WebView2 window; it is served only on 127.0.0.1 behind a random per-run token. All user data is stored locally, encrypted (AES-256-GCM). No account, sign-in, server, ads or telemetry.
+
+HOW TO TEST (no test account needed)
+1. Launch. First run checks the hardware and offers: private AI, an external API key, or no AI. Choose "No AI" to test without keys or downloads.
+2. Create a user: any name, passphrase of at least 12 characters. Accept the data notice.
+3. Ingest tab: upload any PDF lab report or a photo of one. The extracted values appear with their source lines.
+4. Vitals / Medications: use "Log a reading" and "Add a medication" to enter test values.
+5. Settings > About and backups: shows the disclaimer, privacy policy link, licences, and encrypted backup.
+Optional features need user-supplied items and can be skipped: private AI (multi-GB model download from Hugging Face), external AI (user's own NVIDIA/OpenAI/Anthropic API key), phone companion (separate Android app), Bluetooth (a BLE health device).
+
+CAPABILITIES
+- runFullTrust: required for the packaged Win32 desktop app (Python runtime, bundled Tesseract OCR and llama.cpp runtime).
+- internetClient: optional features only — downloading a private AI model (data file, not code) from Hugging Face, and calling the user's chosen AI provider over HTTPS with the user's own key after explicit consent.
+- privateNetworkClientServer + windows.firewallRules (inbound TCP 47110-47119, Private profile only): the optional Android companion syncs over the user's home Wi-Fi. Off by default. Enabled only by the user in Settings. Listens only on RFC 1918 addresses and answers only paired, end-to-end-encrypted requests.
+- bluetooth: optional reading of standard Bluetooth LE health devices (blood pressure, glucose, weight) that the user chooses.
+
+CODE
+No code is downloaded or executed after install. The private AI runtime (llama-server, MIT) and OCR (Tesseract, Apache-2.0) ship inside the package. Model downloads are data files (GGUF weights) loaded by the bundled runtime.
+
+BACKGROUND / SERVICES
+None. No NT services, drivers, startup tasks or background processes after the window closes. Closing the window stops the local server and any AI process it started.
+
+HEALTH
+Not a medical device; this is stated at first run, in Settings, and in the listing. Express consent to store health data is collected before the first user is created (Store policy 10.5.5). The privacy policy is linked in the app and the listing.

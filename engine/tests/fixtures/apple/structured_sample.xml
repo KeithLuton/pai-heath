@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HealthData [
+<!ELEMENT HealthData (ExportDate,Me,(Record|Correlation|Workout|ActivitySummary|ClinicalRecord)*)>
+<!ATTLIST HealthData locale CDATA #REQUIRED>
+<!ELEMENT ExportDate EMPTY>
+<!ATTLIST ExportDate value CDATA #REQUIRED>
+<!ELEMENT Record ((MetadataEntry|HeartRateVariabilityMetadataList)*)>
+<!ATTLIST Record type CDATA #REQUIRED unit CDATA #IMPLIED value CDATA #IMPLIED sourceName CDATA #REQUIRED sourceVersion CDATA #IMPLIED device CDATA #IMPLIED creationDate CDATA #IMPLIED startDate CDATA #REQUIRED endDate CDATA #REQUIRED>
+]>
+<HealthData locale="en_US">
+ <ExportDate value="2026-10-05 21:10:44 -0400"/>
+ <Me HKCharacteristicTypeIdentifierDateOfBirth="1971-03-02" HKCharacteristicTypeIdentifierBiologicalSex="HKBiologicalSexMale" HKCharacteristicTypeIdentifierBloodType="HKBloodTypeNotSet"/>
+ <!-- heart rate with motion-context metadata, device field present -->
+ <Record type="HKQuantityTypeIdentifierHeartRate" sourceName="Demo’s Apple Watch" sourceVersion="11.0" device="&lt;&lt;HKDevice: 0x283a1c7d0&gt;, name:Apple Watch, manufacturer:Apple Inc., model:Watch, hardware:Watch7,2, software:11.0&gt;" unit="count/min" creationDate="2026-10-04 08:01:12 -0400" startDate="2026-10-04 08:01:05 -0400" endDate="2026-10-04 08:01:05 -0400" value="64">
+  <MetadataEntry key="HKMetadataKeyHeartRateMotionContext" value="0"/>
+ </Record>
+ <!-- exact duplicate (re-import / correlation repeat) -->
+ <Record type="HKQuantityTypeIdentifierHeartRate" sourceName="Demo’s Apple Watch" sourceVersion="11.0" device="&lt;&lt;HKDevice: 0x283a1c7d0&gt;, name:Apple Watch, manufacturer:Apple Inc., model:Watch, hardware:Watch7,2, software:11.0&gt;" unit="count/min" creationDate="2026-10-04 08:01:12 -0400" startDate="2026-10-04 08:01:05 -0400" endDate="2026-10-04 08:01:05 -0400" value="64"/>
+ <!-- HRV with beat list -->
+ <Record type="HKQuantityTypeIdentifierHeartRateVariabilitySDNN" sourceName="Demo’s Apple Watch" device="&lt;&lt;HKDevice: 0x1&gt;, name:Apple Watch, manufacturer:Apple Inc., model:Watch, hardware:Watch7,2, software:11.0&gt;" unit="ms" startDate="2026-10-04 03:10:00 -0400" endDate="2026-10-04 03:11:00 -0400" value="41.3">
+  <HeartRateVariabilityMetadataList>
+   <InstantaneousBeatsPerMinute bpm="58" time="3:10:01.12 AM"/>
+   <InstantaneousBeatsPerMinute bpm="59" time="3:10:02.15 AM"/>
+  </HeartRateVariabilityMetadataList>
+ </Record>
+ <!-- SpO2 exported as a fraction with unit % -->
+ <Record type="HKQuantityTypeIdentifierOxygenSaturation" sourceName="Demo’s Apple Watch" device="&lt;&lt;HKDevice: 0x1&gt;, name:Apple Watch, model:Watch, hardware:Watch7,2&gt;" unit="%" startDate="2026-10-04 03:20:00 -0400" endDate="2026-10-04 03:20:00 -0400" value="0.96"/>
+ <!-- third-party CGM in mmol with Apple's molar-mass unit string -->
+ <Record type="HKQuantityTypeIdentifierBloodGlucose" sourceName="CGM App" unit="mmol&lt;180.15588000005408&gt;/L" startDate="2026-10-04 07:00:00 -0400" endDate="2026-10-04 07:00:00 -0400" value="6.7"/>
+ <!-- home cuff via its app -->
+ <Record type="HKQuantityTypeIdentifierBloodPressureSystolic" sourceName="Cuff App" unit="mmHg" startDate="2026-10-04 07:05:00 -0400" endDate="2026-10-04 07:05:00 -0400" value="138"/>
+ <Record type="HKQuantityTypeIdentifierBloodPressureDiastolic" sourceName="Cuff App" unit="mmHg" startDate="2026-10-04 07:05:00 -0400" endDate="2026-10-04 07:05:00 -0400" value="86"/>
+ <!-- sleep: iOS16+ stages and a legacy value -->
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Demo’s Apple Watch" startDate="2026-10-03 23:30:00 -0400" endDate="2026-10-04 01:00:00 -0400" value="HKCategoryValueSleepAnalysisAsleepCore"/>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Demo’s Apple Watch" startDate="2026-10-04 01:00:00 -0400" endDate="2026-10-04 01:45:00 -0400" value="HKCategoryValueSleepAnalysisAsleepDeep"/>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sleep App" startDate="2026-10-03 23:20:00 -0400" endDate="2026-10-04 06:30:00 -0400" value="HKCategoryValueSleepAnalysisAsleep"/>
+ <!-- overlapping steps: phone and watch count the same walk -->
+ <Record type="HKQuantityTypeIdentifierStepCount" sourceName="Demo’s iPhone" device="&lt;&lt;HKDevice: 0x2&gt;, name:iPhone, manufacturer:Apple Inc., model:iPhone, hardware:iPhone15,2, software:18.0&gt;" unit="count" startDate="2026-10-04 12:00:00 -0400" endDate="2026-10-04 12:10:00 -0400" value="980"/>
+ <Record type="HKQuantityTypeIdentifierStepCount" sourceName="Demo’s Apple Watch" device="&lt;&lt;HKDevice: 0x1&gt;, name:Apple Watch, model:Watch, hardware:Watch7,2&gt;" unit="count" startDate="2026-10-04 12:01:00 -0400" endDate="2026-10-04 12:11:00 -0400" value="1010"/>
+ <Record type="HKQuantityTypeIdentifierStepCount" sourceName="Demo’s iPhone" device="&lt;&lt;HKDevice: 0x2&gt;, name:iPhone, model:iPhone, hardware:iPhone15,2&gt;" unit="count" startDate="2026-10-04 18:00:00 -0400" endDate="2026-10-04 18:05:00 -0400" value="400"/>
+ <!-- distance in miles -->
+ <Record type="HKQuantityTypeIdentifierDistanceWalkingRunning" sourceName="Demo’s Apple Watch" unit="mi" startDate="2026-10-04 12:01:00 -0400" endDate="2026-10-04 12:11:00 -0400" value="0.5"/>
+ <!-- broken records: must be rejected, not guessed -->
+ <Record type="HKQuantityTypeIdentifierHeartRate" sourceName="Demo’s Apple Watch" unit="count/min" startDate="2026-10-04 09:00:00 -0400" endDate="2026-10-04 09:00:00 -0400" value="abc"/>
+ <Record type="HKQuantityTypeIdentifierStepCount" sourceName="Demo’s iPhone" unit="count" startDate="2026-10-04 10:00:00 -0400" endDate="2026-10-04 09:00:00 -0400" value="10"/>
+ <!-- a type the importer doesn't map: counted, not dropped -->
+ <Record type="HKQuantityTypeIdentifierEnvironmentalAudioExposure" sourceName="Demo’s iPhone" unit="dBASPL" startDate="2026-10-04 12:00:00 -0400" endDate="2026-10-04 12:30:00 -0400" value="62"/>
+ <!-- iOS16+ workout with statistics children -->
+ <Workout workoutActivityType="HKWorkoutActivityTypeWalking" duration="31.5" durationUnit="min" sourceName="Demo’s Apple Watch" device="&lt;&lt;HKDevice: 0x1&gt;, name:Apple Watch, model:Watch, hardware:Watch7,2&gt;" startDate="2026-10-04 17:00:00 -0400" endDate="2026-10-04 17:31:30 -0400">
+  <WorkoutStatistics type="HKQuantityTypeIdentifierActiveEnergyBurned" startDate="2026-10-04 17:00:00 -0400" endDate="2026-10-04 17:31:30 -0400" sum="141.2" unit="kcal"/>
+  <WorkoutStatistics type="HKQuantityTypeIdentifierDistanceWalkingRunning" startDate="2026-10-04 17:00:00 -0400" endDate="2026-10-04 17:31:30 -0400" sum="1.62" unit="mi"/>
+ </Workout>
+ <ActivitySummary dateComponents="2026-10-04" activeEnergyBurned="402" activeEnergyBurnedGoal="500" activeEnergyBurnedUnit="kcal"/>
+</HealthData>

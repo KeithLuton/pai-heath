@@ -1,0 +1,14 @@
+HEALTH INSURANCE CLAIM FORM                                           1500 (02-12)
+1a. INSURED'S I.D. NUMBER
+XYZ123456789
+2. PATIENT'S NAME (Last Name, First Name, Middle Initial)       4. INSURED'S NAME (Last Name, First Name, Middle Initial)
+SAMPLE, JANE, Q                                                 SAMPLE, JANE, Q
+21. DIAGNOSIS OR NATURE OF ILLNESS OR INJURY
+A. J45.909      B. R05.9
+24. A. DATE(S) OF SERVICE   B. PLACE OF SERVICE   D. PROCEDURES, SERVICES, OR SUPPLIES   E. DIAGNOSIS POINTER   F. $ CHARGES   G. DAYS OR UNITS   J. RENDERING PROVIDER ID. #
+08 28 26 08 28 26           11                    99213 25                               AB                     210 00         1                  1234567893
+08 28 26 08 28 26           11                    94640                                  A                      65 00          1                  1234567893
+25. FEDERAL TAX I.D. NUMBER   26. PATIENT'S ACCOUNT NO.   28. TOTAL CHARGE   29. AMOUNT PAID
+12-3456789                    448812                      275 00             0 00
+33. BILLING PROVIDER INFO & PH #
+Riverbend Family Clinic (555) 010-4477

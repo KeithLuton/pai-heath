@@ -1,0 +1,651 @@
+{
+ "generated_by": "tools/gen_companion_vectors.py",
+ "crypto": {
+  "secret_b64": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+  "pair_id": "PAIR-0a1b2c3d4e5f",
+  "k_up_hex": "e622cbba9003465e6fff4dc4e34e3842a8497cd2ab2fa20ba8c07cb6d93d0be8",
+  "k_down_hex": "2e7c2665741d7a1dda21aec792d74640be1f631c0da9ee675b22b35f3aa15a64",
+  "aad_up_hello": "paihealth/v1|PAIR-0a1b2c3d4e5f|up|/v1/hello",
+  "raw": {
+   "nonce_hex": "6465666768696a6b6c6d6e6f",
+   "plaintext": "{\"paired\":true,\"seq\":7}",
+   "ciphertext_and_tag_hex": "73b1bf0af23570df612ecc8990261ddd79297bfb32ac31b26443a5f5089f79cff484c53510077b"
+  },
+  "envelopes": [
+   {
+    "direction": "down",
+    "path": "/v1/hello",
+    "body": "{\"v\": 1, \"id\": \"PAIR-0a1b2c3d4e5f\", \"n\": \"a4WHHHcbQzqnLKGj\", \"c\": \"B0F338Wc_YIZ9RFJepaZHOygAFjWxriF3Nf8TBsPjLdHwnpbYhbTCaA-BSXDm2X5ofc5UYRXvR3pcmjiYlh1J5bQ\"}",
+    "payload": {
+     "paired": true,
+     "seq": 1,
+     "rules": {
+      "x": [
+       1,
+       2.5,
+       null
+      ]
+     }
+    }
+   },
+   {
+    "direction": "up",
+    "path": "/v1/sync",
+    "body": "{\"v\": 1, \"id\": \"PAIR-0a1b2c3d4e5f\", \"n\": \"OszyAmW7J4cn-E_N\", \"c\": \"Izuut9e1u3Fsf8EhAoVHU5DhNB0zPRkWT2L2oXuR0zJImGgXwBGJ7DMblkrEtyVnXmvdFUfNJqZIvQ8EQfYrnWK87hPFeCId\"}",
+    "payload": {
+     "seq": 2,
+     "entries": [],
+     "device": {
+      "name": "é ✓"
+     }
+    }
+   }
+  ],
+  "tamper": {
+   "note": "same envelope opened with the wrong path or direction must fail",
+   "body": "{\"v\": 1, \"id\": \"PAIR-0a1b2c3d4e5f\", \"n\": \"a4WHHHcbQzqnLKGj\", \"c\": \"B0F338Wc_YIZ9RFJepaZHOygAFjWxriF3Nf8TBsPjLdHwnpbYhbTCaA-BSXDm2X5ofc5UYRXvR3pcmjiYlh1J5bQ\"}",
+   "wrong_path": "/v1/sync",
+   "wrong_direction": "up"
+  }
+ },
+ "pairing": [
+  {
+   "uri": "paihealth://pair?v=1&h=192.168.1.20&p=47110&id=PAIR-abc123&k=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+   "valid": true,
+   "host": "192.168.1.20",
+   "port": 47110,
+   "pair_id": "PAIR-abc123"
+  },
+  {
+   "uri": "paihealth://pair?v=1&h=10.0.0.5&p=47111&id=PAIR-abc123&k=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+   "valid": true,
+   "host": "10.0.0.5",
+   "port": 47111,
+   "pair_id": "PAIR-abc123"
+  },
+  {
+   "uri": "paihealth://pair?v=1&h=172.20.3.4&p=47110&id=PAIR-abc123&k=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+   "valid": true,
+   "host": "172.20.3.4",
+   "port": 47110,
+   "pair_id": "PAIR-abc123"
+  },
+  {
+   "uri": "  paihealth://pair?v=1&h=192.168.0.2&p=47110&id=PAIR-abc123&k=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8\n",
+   "valid": true,
+   "host": "192.168.0.2",
+   "port": 47110,
+   "pair_id": "PAIR-abc123"
+  },
+  {
+   "uri": "paihealth://pair?v=1&h=172.32.0.1&p=47110&id=PAIR-abc123&k=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+   "valid": false
+  },
+  {
+   "uri": "paihealth://pair?v=1&h=8.8.8.8&p=47110&id=PAIR-abc123&k=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+   "valid": false
+  },
+  {
+   "uri": "paihealth://pair?v=1&h=192.0.2.1&p=47110&id=PAIR-abc123&k=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+   "valid": false,
+   "valid_in_test_net": true
+  },
+  {
+   "uri": "paihealth://pair?v=2&h=192.168.1.20&p=47110&id=PAIR-abc123&k=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+   "valid": false
+  },
+  {
+   "uri": "paihealth://pair?v=1&h=192.168.1.20&p=47110&id=PAIR-abc123&k=AAAAAAAAAAAAAAAAAAAAAA",
+   "valid": false
+  },
+  {
+   "uri": "https://example.com/pair?v=1",
+   "valid": false
+  }
+ ],
+ "rules": {
+  "bundle": {
+   "version": "test",
+   "data_path": "LIVE",
+   "dose_rule": {
+    "id": "DOSE-PATTERN",
+    "version": 1,
+    "pre_min": 60,
+    "post_start_min": 30,
+    "post_end_min": 150,
+    "min_dose_days": 14,
+    "min_comparison_days": 7,
+    "min_effect_bpm": 3.0,
+    "min_separation": 1.0,
+    "prompt_after_min": 150
+   },
+   "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose.",
+   "lane3_text": "Your blood pressure reading is very high and you've logged {symptom}. Call 911 or your local emergency number now.",
+   "urgent_symptoms": [
+    "chest pain",
+    "shortness of breath",
+    "sudden weakness or numbness",
+    "trouble speaking",
+    "vision change",
+    "severe headache",
+    "confusion"
+   ],
+   "bp_severe": [
+    180,
+    120
+   ],
+   "recheck_text": "Your reading is very high. Sit quietly for 5 minutes and measure again; if it stays this high, contact your clinician today.",
+   "meds": [
+    {
+     "med_id": "MED-a",
+     "name": "Lisinopril",
+     "dose": "10 mg",
+     "schedule": [
+      "08:00",
+      "20:00"
+     ],
+     "start": null,
+     "pattern": {
+      "state": "NOT_ENOUGH_DATA",
+      "delta": null
+     }
+    },
+    {
+     "med_id": "MED-b",
+     "name": "Metoprolol",
+     "dose": "25 mg",
+     "schedule": [
+      "07:30"
+     ],
+     "start": null,
+     "pattern": {
+      "state": "QUALIFIED",
+      "delta": -6.0
+     }
+    },
+    {
+     "med_id": "MED-c",
+     "name": "Atorvastatin",
+     "dose": "20 mg",
+     "schedule": [
+      "21:00"
+     ],
+     "start": "2026-10-09",
+     "pattern": {
+      "state": "NOT_ENOUGH_DATA",
+      "delta": null
+     }
+    },
+    {
+     "med_id": "MED-d",
+     "name": "As needed",
+     "dose": "",
+     "schedule": [],
+     "start": null,
+     "pattern": {}
+    }
+   ]
+  },
+  "dose_cases": [
+   {
+    "name": "morning_nothing_logged",
+    "now": "2026-10-10T11:00-04:00",
+    "answered": [],
+    "doses": {},
+    "hr": []
+   },
+   {
+    "name": "evening_all_due",
+    "now": "2026-10-10T23:45-04:00",
+    "answered": [],
+    "doses": {},
+    "hr": []
+   },
+   {
+    "name": "some_answered",
+    "now": "2026-10-10T23:45-04:00",
+    "answered": [
+     "MED-a|2026-10-09T08:00-04:00",
+     "MED-b|2026-10-10T07:30-04:00"
+    ],
+    "doses": {
+     "MED-a@2026-10-10": 2
+    },
+    "hr": []
+   },
+   {
+    "name": "pattern_seen",
+    "now": "2026-10-10T11:00-04:00",
+    "answered": [],
+    "doses": {},
+    "hr": [
+     [
+      1791628800,
+      72
+     ],
+     [
+      1791630000,
+      74
+     ],
+     [
+      1791631200,
+      73
+     ],
+     [
+      1791634200,
+      66
+     ],
+     [
+      1791636600,
+      65
+     ],
+     [
+      1791639000,
+      64
+     ]
+    ]
+   },
+   {
+    "name": "pattern_not_seen",
+    "now": "2026-10-10T11:00-04:00",
+    "answered": [],
+    "doses": {},
+    "hr": [
+     [
+      1791628800,
+      72
+     ],
+     [
+      1791630000,
+      74
+     ],
+     [
+      1791631200,
+      73
+     ],
+     [
+      1791634200,
+      73
+     ],
+     [
+      1791636600,
+      72
+     ],
+     [
+      1791639000,
+      74
+     ]
+    ]
+   },
+   {
+    "name": "utc_zone",
+    "now": "2026-10-10T12:00Z",
+    "answered": [],
+    "doses": {},
+    "hr": []
+   },
+   {
+    "name": "east_zone_day_edge",
+    "now": "2026-10-10T00:10+09:00",
+    "answered": [],
+    "doses": {},
+    "hr": []
+   }
+  ],
+  "dose_expected": [
+   {
+    "name": "morning_nothing_logged",
+    "prompts": [
+     {
+      "id": "DOSE|MED-a|2026-10-09T08:00-04:00",
+      "med_id": "MED-a",
+      "due": "2026-10-09T08:00-04:00",
+      "text": "Did you take your 08:00 dose of Lisinopril yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-a|2026-10-09T20:00-04:00",
+      "med_id": "MED-a",
+      "due": "2026-10-09T20:00-04:00",
+      "text": "Did you take your 20:00 dose of Lisinopril yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-a|2026-10-10T08:00-04:00",
+      "med_id": "MED-a",
+      "due": "2026-10-10T08:00-04:00",
+      "text": "Did you take your 08:00 dose of Lisinopril?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-b|2026-10-09T07:30-04:00",
+      "med_id": "MED-b",
+      "due": "2026-10-09T07:30-04:00",
+      "text": "Your usual post-dose pattern hasn't shown up after your 07:30 dose of Metoprolol yesterday. Did you take it?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-b|2026-10-10T07:30-04:00",
+      "med_id": "MED-b",
+      "due": "2026-10-10T07:30-04:00",
+      "text": "Your usual post-dose pattern hasn't shown up after your 07:30 dose of Metoprolol. Did you take it?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-c|2026-10-09T21:00-04:00",
+      "med_id": "MED-c",
+      "due": "2026-10-09T21:00-04:00",
+      "text": "Did you take your 21:00 dose of Atorvastatin yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     }
+    ]
+   },
+   {
+    "name": "evening_all_due",
+    "prompts": [
+     {
+      "id": "DOSE|MED-a|2026-10-09T08:00-04:00",
+      "med_id": "MED-a",
+      "due": "2026-10-09T08:00-04:00",
+      "text": "Did you take your 08:00 dose of Lisinopril yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-a|2026-10-09T20:00-04:00",
+      "med_id": "MED-a",
+      "due": "2026-10-09T20:00-04:00",
+      "text": "Did you take your 20:00 dose of Lisinopril yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-a|2026-10-10T08:00-04:00",
+      "med_id": "MED-a",
+      "due": "2026-10-10T08:00-04:00",
+      "text": "Did you take your 08:00 dose of Lisinopril?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-a|2026-10-10T20:00-04:00",
+      "med_id": "MED-a",
+      "due": "2026-10-10T20:00-04:00",
+      "text": "Did you take your 20:00 dose of Lisinopril?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-b|2026-10-09T07:30-04:00",
+      "med_id": "MED-b",
+      "due": "2026-10-09T07:30-04:00",
+      "text": "Your usual post-dose pattern hasn't shown up after your 07:30 dose of Metoprolol yesterday. Did you take it?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-b|2026-10-10T07:30-04:00",
+      "med_id": "MED-b",
+      "due": "2026-10-10T07:30-04:00",
+      "text": "Your usual post-dose pattern hasn't shown up after your 07:30 dose of Metoprolol. Did you take it?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-c|2026-10-09T21:00-04:00",
+      "med_id": "MED-c",
+      "due": "2026-10-09T21:00-04:00",
+      "text": "Did you take your 21:00 dose of Atorvastatin yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-c|2026-10-10T21:00-04:00",
+      "med_id": "MED-c",
+      "due": "2026-10-10T21:00-04:00",
+      "text": "Did you take your 21:00 dose of Atorvastatin?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     }
+    ]
+   },
+   {
+    "name": "some_answered",
+    "prompts": [
+     {
+      "id": "DOSE|MED-a|2026-10-09T20:00-04:00",
+      "med_id": "MED-a",
+      "due": "2026-10-09T20:00-04:00",
+      "text": "Did you take your 20:00 dose of Lisinopril yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-b|2026-10-09T07:30-04:00",
+      "med_id": "MED-b",
+      "due": "2026-10-09T07:30-04:00",
+      "text": "Your usual post-dose pattern hasn't shown up after your 07:30 dose of Metoprolol yesterday. Did you take it?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-c|2026-10-09T21:00-04:00",
+      "med_id": "MED-c",
+      "due": "2026-10-09T21:00-04:00",
+      "text": "Did you take your 21:00 dose of Atorvastatin yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-c|2026-10-10T21:00-04:00",
+      "med_id": "MED-c",
+      "due": "2026-10-10T21:00-04:00",
+      "text": "Did you take your 21:00 dose of Atorvastatin?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     }
+    ]
+   },
+   {
+    "name": "pattern_seen",
+    "prompts": [
+     {
+      "id": "DOSE|MED-a|2026-10-09T08:00-04:00",
+      "med_id": "MED-a",
+      "due": "2026-10-09T08:00-04:00",
+      "text": "Did you take your 08:00 dose of Lisinopril yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-a|2026-10-09T20:00-04:00",
+      "med_id": "MED-a",
+      "due": "2026-10-09T20:00-04:00",
+      "text": "Did you take your 20:00 dose of Lisinopril yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-a|2026-10-10T08:00-04:00",
+      "med_id": "MED-a",
+      "due": "2026-10-10T08:00-04:00",
+      "text": "Did you take your 08:00 dose of Lisinopril?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-b|2026-10-09T07:30-04:00",
+      "med_id": "MED-b",
+      "due": "2026-10-09T07:30-04:00",
+      "text": "Your usual post-dose pattern hasn't shown up after your 07:30 dose of Metoprolol yesterday. Did you take it?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-b|2026-10-10T07:30-04:00",
+      "med_id": "MED-b",
+      "due": "2026-10-10T07:30-04:00",
+      "text": "Looks like you may have taken your 07:30 dose of Metoprolol. Log it?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-c|2026-10-09T21:00-04:00",
+      "med_id": "MED-c",
+      "due": "2026-10-09T21:00-04:00",
+      "text": "Did you take your 21:00 dose of Atorvastatin yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     }
+    ]
+   },
+   {
+    "name": "pattern_not_seen",
+    "prompts": [
+     {
+      "id": "DOSE|MED-a|2026-10-09T08:00-04:00",
+      "med_id": "MED-a",
+      "due": "2026-10-09T08:00-04:00",
+      "text": "Did you take your 08:00 dose of Lisinopril yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-a|2026-10-09T20:00-04:00",
+      "med_id": "MED-a",
+      "due": "2026-10-09T20:00-04:00",
+      "text": "Did you take your 20:00 dose of Lisinopril yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-a|2026-10-10T08:00-04:00",
+      "med_id": "MED-a",
+      "due": "2026-10-10T08:00-04:00",
+      "text": "Did you take your 08:00 dose of Lisinopril?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-b|2026-10-09T07:30-04:00",
+      "med_id": "MED-b",
+      "due": "2026-10-09T07:30-04:00",
+      "text": "Your usual post-dose pattern hasn't shown up after your 07:30 dose of Metoprolol yesterday. Did you take it?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-b|2026-10-10T07:30-04:00",
+      "med_id": "MED-b",
+      "due": "2026-10-10T07:30-04:00",
+      "text": "Your usual post-dose pattern hasn't shown up after your 07:30 dose of Metoprolol. Did you take it?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-c|2026-10-09T21:00-04:00",
+      "med_id": "MED-c",
+      "due": "2026-10-09T21:00-04:00",
+      "text": "Did you take your 21:00 dose of Atorvastatin yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     }
+    ]
+   },
+   {
+    "name": "utc_zone",
+    "prompts": [
+     {
+      "id": "DOSE|MED-a|2026-10-09T08:00+00:00",
+      "med_id": "MED-a",
+      "due": "2026-10-09T08:00+00:00",
+      "text": "Did you take your 08:00 dose of Lisinopril yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-a|2026-10-09T20:00+00:00",
+      "med_id": "MED-a",
+      "due": "2026-10-09T20:00+00:00",
+      "text": "Did you take your 20:00 dose of Lisinopril yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-a|2026-10-10T08:00+00:00",
+      "med_id": "MED-a",
+      "due": "2026-10-10T08:00+00:00",
+      "text": "Did you take your 08:00 dose of Lisinopril?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-b|2026-10-09T07:30+00:00",
+      "med_id": "MED-b",
+      "due": "2026-10-09T07:30+00:00",
+      "text": "Your usual post-dose pattern hasn't shown up after your 07:30 dose of Metoprolol yesterday. Did you take it?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-b|2026-10-10T07:30+00:00",
+      "med_id": "MED-b",
+      "due": "2026-10-10T07:30+00:00",
+      "text": "Your usual post-dose pattern hasn't shown up after your 07:30 dose of Metoprolol. Did you take it?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-c|2026-10-09T21:00+00:00",
+      "med_id": "MED-c",
+      "due": "2026-10-09T21:00+00:00",
+      "text": "Did you take your 21:00 dose of Atorvastatin yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     }
+    ]
+   },
+   {
+    "name": "east_zone_day_edge",
+    "prompts": [
+     {
+      "id": "DOSE|MED-a|2026-10-09T08:00+09:00",
+      "med_id": "MED-a",
+      "due": "2026-10-09T08:00+09:00",
+      "text": "Did you take your 08:00 dose of Lisinopril yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-a|2026-10-09T20:00+09:00",
+      "med_id": "MED-a",
+      "due": "2026-10-09T20:00+09:00",
+      "text": "Did you take your 20:00 dose of Lisinopril yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-b|2026-10-09T07:30+09:00",
+      "med_id": "MED-b",
+      "due": "2026-10-09T07:30+09:00",
+      "text": "Your usual post-dose pattern hasn't shown up after your 07:30 dose of Metoprolol yesterday. Did you take it?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     },
+     {
+      "id": "DOSE|MED-c|2026-10-09T21:00+09:00",
+      "med_id": "MED-c",
+      "due": "2026-10-09T21:00+09:00",
+      "text": "Did you take your 21:00 dose of Atorvastatin yesterday?",
+      "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+     }
+    ]
+   }
+  ],
+  "bp": [
+   {
+    "sys": 186,
+    "dia": 100,
+    "urgent": [
+     "chest pain"
+    ],
+    "expected": "Your blood pressure reading is very high and you've logged chest pain. Call 911 or your local emergency number now."
+   },
+   {
+    "sys": 186,
+    "dia": 100,
+    "urgent": [],
+    "expected": "Your reading is very high. Sit quietly for 5 minutes and measure again; if it stays this high, contact your clinician today."
+   },
+   {
+    "sys": 150,
+    "dia": 121,
+    "urgent": [],
+    "expected": "Your reading is very high. Sit quietly for 5 minutes and measure again; if it stays this high, contact your clinician today."
+   },
+   {
+    "sys": 179,
+    "dia": 119,
+    "urgent": [
+     "confusion"
+    ],
+    "expected": null
+   },
+   {
+    "sys": 130,
+    "dia": 80,
+    "urgent": [
+     "chest pain"
+    ],
+    "expected": null
+   }
+  ]
+ }
+}

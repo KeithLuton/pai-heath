@@ -1,0 +1,30 @@
+analyte_key,loinc_code,loinc_long_name,component,property,system,scale,typical_ucum_unit,match_confidence,note
+vitamin B12,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+methylmalonic acid,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+hemoglobin A1c,4548-4,Hemoglobin A1c/Hemoglobin.total in Blood,Hemoglobin A1c/Hemoglobin.total,MFr,Bld,Qn,%,BROAD,NGSP percent; seed does not enforce reporting protocol; https://loinc.org/4548-4
+glucose,2345-7,Glucose [Mass/volume] in Serum or Plasma,Glucose,MCnc,Ser/Plas,Qn,mg/dL,BROAD,Only serum/plasma mass concentration; seed also matches capillary/blood glucose; https://loinc.org/2345-7
+creatinine,2160-0,Creatinine [Mass/volume] in Serum or Plasma,Creatinine,MCnc,Ser/Plas,Qn,mg/dL,BROAD,Only serum/plasma mass concentration; https://loinc.org/2160-0
+eGFR,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+potassium,2823-3,Potassium [Moles/volume] in Serum or Plasma,Potassium,SCnc,Ser/Plas,Qn,mmol/L,BROAD,Only serum/plasma; https://loinc.org/2823-3
+sodium,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+TSH,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+LDL cholesterol,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+total cholesterol,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+triglycerides,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+vitamin D,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+ferritin,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+hemoglobin,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+urine albumin-to-creatinine ratio,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+CBC,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+metabolic panel,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+MRI,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+blood urea nitrogen,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+chloride,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+carbon dioxide,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+calcium,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+HDL cholesterol,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+free T4,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+troponin I,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+urine protein,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+urine leukocyte esterase,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."
+urine nitrites,,,,,,,,NONE,"No verified unique code: specimen, method, unit, panel or interpretation ambiguous; requires mapping to a specific observation in LOINC 2.83."

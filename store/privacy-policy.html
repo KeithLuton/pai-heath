@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAi Health Privacy Policy</title>
+<style>
+  :root { --fg:#16202e; --muted:#5b6676; --bg:#ffffff; --line:#e1e5ec; --accent:#0b1b33; }
+  @media (prefers-color-scheme: dark) { :root { --fg:#e7ebf1; --muted:#a3adbb; --bg:#0e1420; --line:#263042; --accent:#9cc3ff; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.8rem; margin: 0 0 4px; } h2 { font-size: 1.15rem; margin: 28px 0 6px; color: var(--accent); }
+  .muted { color: var(--muted); } table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+  td, th { border-top: 1px solid var(--line); padding: 8px 6px; text-align: left; vertical-align: top; }
+</style>
+</head>
+<body>
+<main>
+<h1>PAi Health Privacy Policy</h1>
+<p class="muted">PAi Luton · Effective [DATE OF FIRST PUBLICATION] · Applies to PAi Health for Windows and the PAi Health Companion for Android</p>
+
+<h2>The short version</h2>
+<p>PAi Health keeps your health information on your own computer, encrypted with a passphrase only you know. PAi Luton does not receive, collect, store, sell or share your health information. There is no PAi Health account, no cloud storage, no advertising and no analytics. Information leaves your computer only when you switch on a feature that needs it, as described below.</p>
+
+<h2>What the app stores, and where</h2>
+<p>Everything you add — medical documents, lab results, readings such as blood pressure and glucose, medications and doses, symptoms, device and watch exports, your questions, and your age and sex if you enter them — is stored on your computer in an encrypted vault (AES-256-GCM, key derived from your passphrase with scrypt). Each person using the app has their own vault and passphrase. A tamper-evident audit log records what happened to your data (for example "document added", "backup created", "external AI call made"); it records events, not the content.</p>
+<p>PAi Luton cannot read your vault and cannot recover a lost passphrase.</p>
+<p>Uninstalling the app deletes its data from your computer. Backups you make are encrypted files saved in your Documents folder; they stay until you delete them.</p>
+
+<h2>When information leaves your computer</h2>
+<table>
+<tr><th>Feature (off unless you turn it on)</th><th>What is sent, and to whom</th></tr>
+<tr><td>Outside AI provider (NVIDIA, OpenAI or Anthropic, using your own API key)</td><td>Only the parts you allow on the consent screen: page images and the text read from them, and/or the individual lines a value came from (to double-check uploads); the records and source text the AI looks up when you ask it to investigate a question; and summaries of findings for wording. Whole documents are never sent. These go directly from your computer to the provider you chose, under that provider's own terms and privacy policy. Each call is recorded in your audit log. You can withdraw consent at any time in Settings.</td></tr>
+<tr><td>Private AI model download</td><td>When you choose a private model, the app downloads the model file from Hugging Face. No health information is sent; Hugging Face sees your computer's IP address as with any download.</td></tr>
+<tr><td>Checking your API key / listing models</td><td>Your API key is sent to the provider you chose, to list the models available to you. The key is stored only in your encrypted vault.</td></tr>
+<tr><td>Phone companion (Android)</td><td>Readings and logs move between your phone and your computer over your own home Wi-Fi only, encrypted end to end with keys created when you pair. Nothing goes through PAi Luton or any internet server. The phone reads data from Android Health Connect only for the types you allow.</td></tr>
+<tr><td>Bluetooth health devices</td><td>Readings are received from devices you choose, directly over Bluetooth, and stored in your vault.</td></tr>
+<tr><td>Links you open</td><td>Opening a link (for example a PubMed reference or a provider's key page) opens your web browser, which then works under that site's policy.</td></tr>
+</table>
+
+<h2>What PAi Luton receives</h2>
+<p>Nothing from the app. If you email us for support, we receive what you choose to send, use it only to answer you, and delete it when the matter is closed. Please don't email health information. Microsoft provides us with aggregate, de-identified Store statistics (such as install counts and crash counts) under Microsoft's privacy statement; these contain no health information.</p>
+
+<h2>Medical information disclaimer</h2>
+<p>PAi Health is not a medical device. It organises your records and points out things to discuss with your clinician; it does not diagnose, treat or replace professional medical advice. In an emergency, call your local emergency number.</p>
+
+<h2>Children</h2>
+<p>PAi Health is intended for adults managing their own health information. It is not directed at children.</p>
+
+<h2>Your choices and rights</h2>
+<p>Because your data is on your computer, you control it directly: you can view, correct (the app keeps the earlier version and marks it replaced), export, back up, or delete it, and you can uninstall the app at any time. You can turn off any outside AI provider and unpair your phone in Settings. Since PAi Luton holds no personal data about you from the app, requests to us for access or deletion will have nothing to act on, but we will confirm this on request.</p>
+
+<h2>Security</h2>
+<p>Data is encrypted at rest. The app's interface is served only to your own computer (127.0.0.1) behind a per-session secret. The phone link listens only on private home-network addresses, only when you turn it on, and only answers paired phones. Connections to AI providers use HTTPS.</p>
+
+<h2>Literature data</h2>
+<p>This product uses publicly available data from the U.S. National Library of Medicine (NLM), National Institutes of Health, Department of Health and Human Services; NLM is not responsible for the product and does not endorse or recommend this or any other product.</p>
+
+<h2>Changes</h2>
+<p>If a new version changes what information leaves your computer, we will update this policy before releasing it, change the date above, and ask for your consent in the app where required.</p>
+
+<h2>Contact</h2>
+<p>PAi Luton · [POSTAL ADDRESS] · <a href="mailto:[PRIVACY EMAIL]">[PRIVACY EMAIL]</a></p>
+</main>
+</body>
+</html>

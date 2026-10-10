@@ -1,0 +1,56 @@
+{
+ "resourceType": "Invoice",
+ "id": "inv-1",
+ "status": "issued",
+ "identifier": [
+  {
+   "system": "urn:example:clinic:invoices",
+   "value": "INV-448812-09"
+  }
+ ],
+ "subject": {
+  "reference": "Patient/p1"
+ },
+ "date": "2026-09-20",
+ "issuer": {
+  "display": "Riverbend Family Clinic"
+ },
+ "lineItem": [
+  {
+   "sequence": 1,
+   "chargeItemCodeableConcept": {
+    "coding": [
+     {
+      "system": "urn:example:procedure-codes",
+      "code": "99213"
+     }
+    ]
+   },
+   "priceComponent": [
+    {
+     "type": "base",
+     "amount": {
+      "value": 210.0,
+      "currency": "USD"
+     }
+    },
+    {
+     "type": "discount",
+     "amount": {
+      "value": -64.0,
+      "currency": "USD"
+     }
+    }
+   ]
+  }
+ ],
+ "totalNet": {
+  "value": 146.0,
+  "currency": "USD"
+ },
+ "totalGross": {
+  "value": 210.0,
+  "currency": "USD"
+ },
+ "paymentTerms": "Due within 30 days"
+}

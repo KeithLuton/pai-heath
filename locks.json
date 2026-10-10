@@ -1,0 +1,654 @@
+{
+  "schema": 1,
+  "contract_version": "0.4.4",
+  "locked": {
+    "engine/spigot/__init__.py": {
+      "tier": "LOCKED",
+      "version": "1.0",
+      "sha256": "de7cabe4d99826be5111d2119cd69660b6baa4657863674e21ef892def3a9d86",
+      "locked_on": "2026-10-07"
+    },
+    "engine/spigot/epifloat.py": {
+      "tier": "LOCKED",
+      "version": "1.0",
+      "sha256": "2305027e025a7374a435d7da02cc2a5df548955ab0a4945465382490a2520f22",
+      "locked_on": "2026-10-07"
+    },
+    "engine/spigot/bracket_vector.py": {
+      "tier": "LOCKED",
+      "version": "1.0",
+      "sha256": "d39e189f0c9595d6ac8bbe33f57ab718fe01df5f5b53da499ccecabdfa481730",
+      "locked_on": "2026-10-07"
+    },
+    "engine/health_server.py": {
+      "tier": "LOCKED",
+      "version": "1.4",
+      "sha256": "d89da6c83ead4c9f0e7b597f3fbb9850e7b6d35612608e76189fb9508c287cce",
+      "locked_on": "2026-10-08"
+    },
+    "engine/ingest/model.py": {
+      "tier": "LOCKED",
+      "version": "1.0",
+      "sha256": "70332fa1a3d4ed4901bd794ddd5fd945f751a9542106ecdb7bb0c98f393578ce",
+      "locked_on": "2026-10-07"
+    },
+    "engine/devices/schema.py": {
+      "tier": "LOCKED",
+      "version": "1.0",
+      "sha256": "de83982d0dc40edf716e9c4d2b208e1f95e212178cf6363d7c3a5a6eb3ba5393",
+      "locked_on": "2026-10-07"
+    },
+    "engine/records/dates.py": {
+      "tier": "LOCKED",
+      "version": "1.0",
+      "sha256": "9801c0cf96dd3197c3b2567f79a548dbcd3681c008f542520eefe3d24838afa1",
+      "locked_on": "2026-10-07"
+    },
+    "src/contract/types.ts": {
+      "tier": "LOCKED",
+      "version": "1.4",
+      "sha256": "236280a4721ca99cd8a7a525310cd7c6f531b55aadc5bd0cdd1f0082e2488f67",
+      "locked_on": "2026-10-08"
+    },
+    "src/contract/source.ts": {
+      "tier": "LOCKED",
+      "version": "1.3",
+      "sha256": "57293ac8d61101bd56d8d21d60a7243721ec4ba559c92a8870fc0b55887e3d27",
+      "locked_on": "2026-10-08"
+    },
+    "engine/tests/test_records.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "193226def0d804758a024fc3757e8037c1644b708a3e6c522ae8963ba07b6cb9",
+      "locked_on": "2026-10-07"
+    },
+    "engine/tests/test_ingest.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "c68406b140fd29ee5cb7a0a74cf96c2475259d9ad3aa49f7c54162229db4d0c6",
+      "locked_on": "2026-10-07"
+    },
+    "engine/tests/test_record_engine.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.2",
+      "sha256": "847d4d4ffcb52fb75b6b17af60e1e95d6ee8dc03c0b05597638173a951c24ec4",
+      "locked_on": "2026-10-08"
+    },
+    "engine/tests/test_apple_health.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "a454ac6e853ded0d163a10287cd8bce3d1be75a4213e2882bc6ce3a050579d5b",
+      "locked_on": "2026-10-07"
+    },
+    "engine/tests/test_fitbit.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "3a99883cb895420b50608bcf27d4770223d38e3b1f6873ed1c9485b42df0deff",
+      "locked_on": "2026-10-07"
+    },
+    "engine/tests/test_garmin_activities.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "696af476af0f49fefba8b03f75610a7f9a6b307ab65efd5bec54ea85b31fc6a2",
+      "locked_on": "2026-10-07"
+    },
+    "engine/tests/test_generic_csv.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "ebf3dff8e1f131fdf27c9b7478f24ea1b7b71f9183a9d44a84c95fba1b5ae2a4",
+      "locked_on": "2026-10-07"
+    },
+    "engine/tests/test_page_ingest.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "dfde65448cc0a8ad5fc8847105c5cbccb8fa5acc47c0d889c6b76942d1ccb850",
+      "locked_on": "2026-10-07"
+    },
+    "engine/tests/test_labs.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "255073b5bc0a7c401c689f5951b37581a5f65a1dbe3e606f9f64f7018ce378bd",
+      "locked_on": "2026-10-08"
+    },
+    "src/data/scenario_001.json": {
+      "tier": "LOCKED",
+      "version": "1.0",
+      "sha256": "43ac3a6cb5566c1316939fe87e774d6fbe3c5afe17d0703ae3dd93096ca6567a",
+      "locked_on": "2026-10-08"
+    },
+    "engine/tests/test_storage.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "efc58adee85abc57a54b0bb3dc6bdffe7e5d861cc870b780cf0eeaf8735462d2",
+      "locked_on": "2026-10-08"
+    },
+    "engine/storage/audit.py": {
+      "tier": "LOCKED",
+      "version": "1.0",
+      "sha256": "b0e6d4eda99b678e0f64cf209ffc00fec1b938353158862d53e24749d5c6f5f7",
+      "locked_on": "2026-10-08"
+    },
+    "engine/tests/test_knowledge.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "3f3b1e8d67a0cf56bdf6e52f606d9373f3205f3f7e74ae0b074e538635df1e99",
+      "locked_on": "2026-10-08"
+    },
+    "engine/tests/test_app.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.1",
+      "sha256": "f6c7a77f7ee785c1e4e4106397032f4bfeeea1375908ccb33b54bccfe9709b6d",
+      "locked_on": "2026-10-08"
+    },
+    "engine/tests/test_bluetooth.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.1",
+      "sha256": "58a7ea6199ae4327045eb8b03590dd4337e6852195c910cbd82cbe271889fa83",
+      "locked_on": "2026-10-08"
+    },
+    "engine/tests/test_investigate.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "d7c2516c5fe43e0e101a91fa76e57450570acca9da9ac8abd27ef327282bb2a7",
+      "locked_on": "2026-10-08"
+    },
+    "engine/tests/test_tracker.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "0f580b9f72f4b682bfd8ee24203b0d52aa8c259292aeb8ed811762fc1e49139b",
+      "locked_on": "2026-10-08"
+    },
+    "engine/tests/test_companion.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "aae11eeac236b539e137fa0a0c093df46ebf967d16cf851155b776d77d409ec1",
+      "locked_on": "2026-10-08"
+    },
+    "engine/tests/test_companion_java.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "9435ef3439a35607b0145d35d815d2b51106b28837ef162664e54311c84d3100",
+      "locked_on": "2026-10-08"
+    },
+    "engine/companion/protocol.py": {
+      "tier": "LOCKED",
+      "version": "1.0",
+      "sha256": "c2e5e73fa68eaa794e208dd338e4350be21a11d2f4514c7d585e6c306aac1a85",
+      "locked_on": "2026-10-08"
+    },
+    "engine/tests/test_packaging.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "169a7e5ae0509a08bb00836887405c5a7062d0750ac4248efe6b2ecbf76e2cd2",
+      "locked_on": "2026-10-08"
+    },
+    "packaging/AppxManifest.template.xml": {
+      "tier": "LOCKED",
+      "version": "1.1",
+      "sha256": "8073451adfd1c8c719052831df2542cfef4dc438ee09f61029a9ef8b98dd5b1a",
+      "locked_on": "2026-10-08"
+    },
+    "engine/tests/test_nutrition.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.1",
+      "sha256": "613a01ee01d4539423a63c5d005d9a720abb4c6107adefa5967ccc9777a72e46",
+      "locked_on": "2026-10-08"
+    },
+    "engine/tests/test_release.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "e75cc182b08ebb2ff3454b4edc94a82cba837985892d9a404317e3c64ce779fd",
+      "locked_on": "2026-10-08"
+    },
+    "engine/tests/test_manual_labs.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "199b9550750d769bee74992a7194cf7011b15bf65f25d9f353404a9be948f0fe",
+      "locked_on": "2026-10-08"
+    },
+    "engine/tests/test_terminology.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "9c501cb2335c11b2954bcc0c5f13d6c881ad257c07000c73114fbbd48b59abf6",
+      "locked_on": "2026-10-08"
+    },
+    "engine/tests/test_passphrase_change.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.1",
+      "sha256": "21345f02dad6b443f9607562d9eefe556ae5a882bcc1b7fb60eb5dcc9d239494",
+      "locked_on": "2026-10-08"
+    },
+    "engine/tests/test_billing_profiles.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "1f0d18b32d607a7bf5e879bb0700012b975eb49b4a58f4d0cc3680ccfd28b123",
+      "locked_on": "2026-10-10"
+    },
+    "engine/tests/test_medical_library_setup.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "201cf7550d5dc1191133d8dba9f35c998c0381b3188d7756f0c8b2cd42d1446e",
+      "locked_on": "2026-10-10"
+    },
+    "engine/tests/test_billing_extract.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "a81cef45fdd1e582c94e68fdc46102c677efaeffadc280c497a90027a112853c",
+      "locked_on": "2026-10-10"
+    },
+    "engine/tests/test_companion_swift.py": {
+      "tier": "TEST_GUARD",
+      "version": "1.0",
+      "sha256": "c0c51bbe3fa94e5f5861858b0b77bc5ddfcd7931a1e6724deb3c6be9d7008bdd",
+      "locked_on": "2026-10-10"
+    }
+  },
+  "history": [
+    {
+      "date": "2026-10-07",
+      "path": "engine/spigot/__init__.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "initial lock (review of 2026-10-07)"
+    },
+    {
+      "date": "2026-10-07",
+      "path": "engine/spigot/epifloat.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "initial lock (review of 2026-10-07)"
+    },
+    {
+      "date": "2026-10-07",
+      "path": "engine/spigot/bracket_vector.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "initial lock (review of 2026-10-07)"
+    },
+    {
+      "date": "2026-10-07",
+      "path": "engine/health_server.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "initial lock (review of 2026-10-07)"
+    },
+    {
+      "date": "2026-10-07",
+      "path": "engine/ingest/model.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "initial lock (review of 2026-10-07)"
+    },
+    {
+      "date": "2026-10-07",
+      "path": "engine/devices/schema.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "initial lock (review of 2026-10-07)"
+    },
+    {
+      "date": "2026-10-07",
+      "path": "engine/records/dates.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "initial lock (review of 2026-10-07)"
+    },
+    {
+      "date": "2026-10-07",
+      "path": "src/contract/types.ts",
+      "action": "add",
+      "version": "1.0",
+      "reason": "initial lock (review of 2026-10-07)"
+    },
+    {
+      "date": "2026-10-07",
+      "path": "src/contract/source.ts",
+      "action": "add",
+      "version": "1.0",
+      "reason": "initial lock (review of 2026-10-07)"
+    },
+    {
+      "date": "2026-10-07",
+      "path": "engine/tests/test_records.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "initial lock (review of 2026-10-07)"
+    },
+    {
+      "date": "2026-10-07",
+      "path": "engine/tests/test_ingest.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "initial lock (review of 2026-10-07)"
+    },
+    {
+      "date": "2026-10-07",
+      "path": "engine/tests/test_record_engine.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "initial lock (review of 2026-10-07)"
+    },
+    {
+      "date": "2026-10-07",
+      "path": "engine/tests/test_apple_health.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "initial lock (review of 2026-10-07)"
+    },
+    {
+      "date": "2026-10-07",
+      "path": "engine/tests/test_fitbit.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "initial lock (review of 2026-10-07)"
+    },
+    {
+      "date": "2026-10-07",
+      "path": "engine/tests/test_garmin_activities.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "initial lock (review of 2026-10-07)"
+    },
+    {
+      "date": "2026-10-07",
+      "path": "engine/tests/test_generic_csv.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "initial lock (review of 2026-10-07)"
+    },
+    {
+      "date": "2026-10-07",
+      "path": "engine/tests/test_page_ingest.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "initial lock (review of 2026-10-07)"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_record_engine.py",
+      "action": "relock",
+      "version": "1.1",
+      "reason": "Owner decisions 1-3 on SCENARIO_001: exact spans without trigger words or section labels; unprinted reference unit null. Gate tightened from containment to exact match."
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_labs.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "Lab-report extraction ported from retired extract_labs with §2.5 fixes"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_record_engine.py",
+      "action": "relock",
+      "version": "1.2",
+      "reason": "Owner decisions 4-8 (no preference; constitution rules applied): exact section, measurement concept, med_status and disclaimer checks; no-authority variant places F-12 as an alternative."
+    },
+    {
+      "date": "2026-10-08",
+      "path": "src/data/scenario_001.json",
+      "action": "add",
+      "version": "1.0",
+      "reason": "SCENARIO_001: all 8 fixture decisions made 2026-10-08. Values not yet verified line by line by a person."
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_storage.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "Storage: encryption, tamper, audit, backup, server wiring"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/storage/audit.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "Verbatim from PAi Legal audit.py"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_knowledge.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "KB builder rules, retraction exclusion, no abstracts shipped, exact-match retrieval, Parliament chain, lint, determinism"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/health_server.py",
+      "action": "relock",
+      "version": "1.1",
+      "reason": "Registered API routes (users, AI setup, ingest) behind the same token/Host/POST gates; per-route body limits"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_app.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "App layer: users, AI setup, provider wire formats, ingest double-check guards and locks, external-call audit, server routes"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/health_server.py",
+      "action": "relock",
+      "version": "1.2",
+      "reason": "Constitution v0.4.2: §17 amended (external AI may double-check uploads with recorded consent); contract version 0.4.2, no shape change"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "src/contract/source.ts",
+      "action": "relock",
+      "version": "1.1",
+      "reason": "Constitution v0.4.2: §17 amended (external AI may double-check uploads with recorded consent); contract version 0.4.2, no shape change"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "src/contract/types.ts",
+      "action": "relock",
+      "version": "1.1",
+      "reason": "Constitution v0.4.2: §17 amended (external AI may double-check uploads with recorded consent); contract version 0.4.2, no shape change"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_app.py",
+      "action": "relock",
+      "version": "1.1",
+      "reason": "§17 v0.4.2: external sharing requires recorded consent; tests give consent and check refusal, scope widening and withdrawal"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_bluetooth.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "BLE decoding per GATT specs incl. special values, device timestamps, unit conversion logging, vault-only storage"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_bluetooth.py",
+      "action": "relock",
+      "version": "1.1",
+      "reason": "Device class from GATT profile (§20.2)"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/health_server.py",
+      "action": "relock",
+      "version": "1.3",
+      "reason": "Constitution v0.4.3: §14 investigation (model proposes, never decides); version only"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "src/contract/source.ts",
+      "action": "relock",
+      "version": "1.2",
+      "reason": "Constitution v0.4.3: §14 investigation (model proposes, never decides); version only"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "src/contract/types.ts",
+      "action": "relock",
+      "version": "1.2",
+      "reason": "Constitution v0.4.3: §14 investigation (model proposes, never decides); version only"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_investigate.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "Investigation guards: unknown ids, invented quotes, §12 wording, uncited answers bounce; evidence untouched; proposals stay MODEL_PROPOSAL; consent scope"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "src/contract/types.ts",
+      "action": "relock",
+      "version": "1.3",
+      "reason": "Live tracker: additive optional fields (prompt action/rule, medication schedule/targets/origin, vitals markers, lane rule); nullable daily values and age/sex when unknown"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_tracker.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "Tracker Part II: lanes incl. lane 3 fixed text, gates and hold list, dose prompts with safety line, learned dose pattern, change windows with challenge items, labs asks, wording, device import dedupe and encryption"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/health_server.py",
+      "action": "relock",
+      "version": "1.4",
+      "reason": "Constitution v0.4.4: phone companion network exception (§20.4); version only"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "src/contract/source.ts",
+      "action": "relock",
+      "version": "1.3",
+      "reason": "Constitution v0.4.4: phone companion network exception (§20.4); version only"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "src/contract/types.ts",
+      "action": "relock",
+      "version": "1.4",
+      "reason": "Constitution v0.4.4: phone companion network exception (§20.4); version only"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_companion.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "Companion: LAN-only listener, QR pairing, sealed envelopes, replay/path/revocation/locked refusals, entries+samples into vault, rules bundle"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_companion_java.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "Phone Java core interop with PC: pairing, sync, replay refusal, identical dose prompts"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/companion/protocol.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "Companion wire protocol v1 — the phone depends on it byte for byte"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_packaging.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "Store packaging: manifest capabilities, private-only firewall rule = companion ports, data notice consent, backups outside package, process cleanup, single instance, logo set"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "packaging/AppxManifest.template.xml",
+      "action": "add",
+      "version": "1.0",
+      "reason": "MSIX identity/capabilities/firewall boundary; changes need review"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_nutrition.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "Meal logging (USDA FDC): builder, search, portions, MEAL normalize, frozen totals, med-food wording, routes"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_release.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "Audit gates: disaster recovery end to end, constitution ships at contract version, dev companion port fallback"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_manual_labs.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "Typed labs: USER_TYPED never verified, transcription limits, one analyte per record, supersede on correction"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_terminology.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "Terminology maps: coverage of seed lexicon, LOINC check digit, no guessed codes"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_passphrase_change.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "Passphrase change: rewrap only, ciphertext unchanged, crash-safe swap, retry after failed swap, audit, route"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_nutrition.py",
+      "action": "relock",
+      "version": "1.1",
+      "reason": "Windows run: fixed clock times were in the future before noon / on other days; use a time minutes ago"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "engine/tests/test_passphrase_change.py",
+      "action": "relock",
+      "version": "1.1",
+      "reason": "Windows run: close the raw sqlite handle (with-connect does not close) so temp dirs can be deleted"
+    },
+    {
+      "date": "2026-10-08",
+      "path": "packaging/AppxManifest.template.xml",
+      "action": "relock",
+      "version": "1.1",
+      "reason": "MakeAppx: windows.firewallRules must be declared under <Package> Extensions, not <Application>"
+    },
+    {
+      "date": "2026-10-10",
+      "path": "engine/tests/test_billing_profiles.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "billing ingestion registry contract (merge 2026-10-10)"
+    },
+    {
+      "date": "2026-10-10",
+      "path": "engine/tests/test_medical_library_setup.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "medical-library onboarding: no license claims, no iframe, restore kept (merge 2026-10-10)"
+    },
+    {
+      "date": "2026-10-10",
+      "path": "engine/tests/test_billing_extract.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "billing extraction contract: provenance round-trip, label-only money mapping, no derivation, person-confirmed paper profiles (2026-10-10)"
+    },
+    {
+      "date": "2026-10-10",
+      "path": "engine/tests/test_companion_swift.py",
+      "action": "add",
+      "version": "1.0",
+      "reason": "iPhone core interop with live PC server (2026-10-10)"
+    }
+  ]
+}

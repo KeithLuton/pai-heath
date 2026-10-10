@@ -1,0 +1,110 @@
+{
+ "resourceType": "Claim",
+ "id": "clm-1",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/StructureDefinition/Claim"
+  ]
+ },
+ "identifier": [
+  {
+   "system": "urn:example:clinic:claims",
+   "value": "C-77812"
+  }
+ ],
+ "status": "active",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+    "code": "professional"
+   }
+  ]
+ },
+ "use": "claim",
+ "patient": {
+  "reference": "Patient/p1",
+  "display": "Jane Q Sample"
+ },
+ "created": "2026-08-29",
+ "provider": {
+  "reference": "Organization/riverbend",
+  "display": "Riverbend Family Clinic"
+ },
+ "insurer": {
+  "display": "Acme Health Plan"
+ },
+ "diagnosis": [
+  {
+   "sequence": 1,
+   "diagnosisCodeableConcept": {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "code": "J45.909"
+     }
+    ]
+   }
+  }
+ ],
+ "item": [
+  {
+   "sequence": 1,
+   "productOrService": {
+    "coding": [
+     {
+      "system": "urn:example:procedure-codes",
+      "code": "99213"
+     }
+    ]
+   },
+   "modifier": [
+    {
+     "coding": [
+      {
+       "system": "urn:example:modifiers",
+       "code": "25"
+      }
+     ]
+    }
+   ],
+   "servicedDate": "2026-08-28",
+   "quantity": {
+    "value": 1
+   },
+   "unitPrice": {
+    "value": 210.0,
+    "currency": "USD"
+   },
+   "net": {
+    "value": 210.0,
+    "currency": "USD"
+   },
+   "diagnosisSequence": [
+    1
+   ]
+  },
+  {
+   "sequence": 2,
+   "productOrService": {
+    "coding": [
+     {
+      "system": "urn:example:procedure-codes",
+      "code": "36415"
+     }
+    ]
+   },
+   "servicedDate": "2026-08-28",
+   "quantity": {
+    "value": 1
+   },
+   "net": {
+    "value": 35.0
+   }
+  }
+ ],
+ "total": {
+  "value": 245.0,
+  "currency": "USD"
+ }
+}

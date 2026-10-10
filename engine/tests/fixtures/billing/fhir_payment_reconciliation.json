@@ -1,0 +1,37 @@
+{
+ "resourceType": "PaymentReconciliation",
+ "id": "pr-1",
+ "status": "active",
+ "created": "2026-09-16",
+ "paymentIssuer": {
+  "display": "Acme Health Plan"
+ },
+ "outcome": "complete",
+ "paymentDate": "2026-09-16",
+ "paymentAmount": {
+  "value": 127.2,
+  "currency": "USD"
+ },
+ "paymentIdentifier": {
+  "value": "EFT-88123"
+ },
+ "detail": [
+  {
+   "type": {
+    "coding": [
+     {
+      "code": "payment"
+     }
+    ]
+   },
+   "request": {
+    "reference": "Claim/clm-1"
+   },
+   "date": "2026-09-16",
+   "amount": {
+    "value": 127.2,
+    "currency": "USD"
+   }
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+UB-04 CMS-1450
+1 Lakeview Regional Hospital          3a PAT. CNTL #  LRH-2026-88213       4 TYPE OF BILL
+                                      3b MED. REC. #  MR-0045521           0131
+6 STATEMENT COVERS PERIOD  08/14/2026 - 08/14/2026
+8 PATIENT NAME  SAMPLE, JANE Q
+
+42 REV. CD.  43 DESCRIPTION               44 HCPCS / RATE / HIPPS CODE  45 SERV. DATE  46 SERV. UNITS  47 TOTAL CHARGES  48 NON-COVERED CHARGES
+0300         LABORATORY                   80053                         08/14/2026     1                  145.00
+0320         DX X-RAY                     71046                         08/14/2026     1                  310.00
+0450         EMERGENCY ROOM               99284                         08/14/2026     1                1,825.00
+0001         TOTAL                                                                                      2,280.00

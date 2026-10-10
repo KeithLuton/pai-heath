@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PAi Health</string>
+    <string name="privacy">PAi Health stores your health records and daily readings on your phone and your own PC only, encrypted with your passphrase. No cloud account, no cloud copy, no analytics, and no advertising.</string>
+    <string name="privacy_rationale">PAi Health reads your Health Connect data (heart rate, resting heart rate, steps, sleep, blood pressure, weight, blood glucose, and oxygen saturation) strictly to display it for your own review and to sync it directly to your encrypted PC vault over your private home Wi-Fi.\n\nYour health information is never uploaded to any cloud server, third-party service, or company. No data is collected, sold, or shared for advertising or analytics. You can disconnect or revoke permissions at any time in Health Connect settings.</string>
+</resources>

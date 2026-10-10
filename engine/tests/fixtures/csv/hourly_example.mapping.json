@@ -1,0 +1,11 @@
+{
+  "source_name": "Example watch app",
+  "device_class": "OTHER_SOURCE",
+  "timestamp": { "date_column": "date", "time_column": "time", "format": "%Y-%m-%d %H:%M:%S", "timezone": "America/New_York" },
+  "interval": { "kind": "fixed", "minutes": 60 },
+  "columns": {
+    "steps":    { "measure": "steps",              "unit": "count" },
+    "distance": { "measure": "distance",           "unit": "mi" },
+    "calories": { "measure": "energy_unspecified", "unit": "kcal" }
+  }
+}

@@ -1,0 +1,61 @@
+# XcodeGen spec for the PAi Health iPhone companion.
+#   brew install xcodegen && cd ios && xcodegen generate   -> PAiHealthCompanion.xcodeproj
+# The CI workflow (.github/workflows/ios.yml) does the same on a GitHub macOS runner.
+name: PAiHealthCompanion
+options:
+  bundleIdPrefix: com.pailuton.health
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+packages:
+  CompanionCore:
+    path: CompanionCore
+targets:
+  PAiHealth:
+    type: application
+    platform: iOS
+    sources:
+      - path: App
+    dependencies:
+      - package: CompanionCore
+        product: CompanionCore
+    entitlements:
+      path: App/PAiHealth.entitlements
+      properties:
+        com.apple.developer.healthkit: true
+        com.apple.developer.healthkit.access: []
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: PAi Health
+        CFBundleShortVersionString: "0.1.0"
+        CFBundleVersion: "1"
+        LSRequiresIPhoneOS: true
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        NSHealthShareUsageDescription: "PAi Health reads heart rate, resting heart rate, steps, sleep, blood pressure, weight, glucose and oxygen to send them to your own computer's encrypted PAi Health vault. Nothing goes to any cloud."
+        NSHealthUpdateUsageDescription: "PAi Health does not write to Apple Health."
+        NSCameraUsageDescription: "The camera scans the pairing code shown on your computer."
+        NSLocalNetworkUsageDescription: "PAi Health talks only to your own computer on your home Wi-Fi to sync your readings."
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+        UIBackgroundModes: [fetch]
+        BGTaskSchedulerPermittedIdentifiers: [com.pailuton.health.companion.refresh]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.pailuton.health.companion
+        PRODUCT_NAME: PAiHealth
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        GENERATE_INFOPLIST_FILE: NO
+        CODE_SIGN_STYLE: Automatic
+        ENABLE_PREVIEWS: NO
+        CURRENT_PROJECT_VERSION: "1"
+        MARKETING_VERSION: "0.1.0"
+schemes:
+  PAiHealth:
+    build:
+      targets:
+        PAiHealth: all

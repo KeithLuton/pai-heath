@@ -1,0 +1,1655 @@
+{
+ "synthetic": true,
+ "notice": "Synthetic demo data for UI development. Not a real person. Every value is precomputed; the UI computes nothing epistemic.",
+ "as_of": "2026-10-06",
+ "user": {
+  "display_name": "Demo user",
+  "age": 55,
+  "sex": "male"
+ },
+ "settings": {
+  "data_path": "REVIEW",
+  "device_dose_confirmation": false,
+  "ai_mode": "PAi",
+  "live_available": false,
+  "local_model_installed": true
+ },
+ "lanes": [
+  {
+   "area": "Blood pressure",
+   "lane": 1,
+   "summary": "Home average 136/86 over the last 14 days.",
+   "history": "A check-in prompt showed on 2026-09-01 (14-day average above 140/90). Resolved: clinician visit 2026-09-08, lisinopril started.",
+   "escalates_if": "Average back at 140/90 or higher, or any reading at or above 180/120 with symptoms."
+  },
+  {
+   "area": "Blood sugar",
+   "lane": 1,
+   "summary": "Fasting meter readings averaged 122 mg/dL over 14 days; 4 of 14 were 126 or higher.",
+   "history": "Watching. A check-in prompt shows at 5 of 14 days at 126 or higher.",
+   "escalates_if": "5 or more of 14 fasting readings at 126 or higher."
+  },
+  {
+   "area": "Kidney function",
+   "lane": null,
+   "summary": "This year's labs haven't been entered.",
+   "history": "Last metabolic panel entered 2025-08-14.",
+   "escalates_if": null
+  }
+ ],
+ "prompts": [
+  {
+   "id": "PR-1",
+   "kind": "DOSE",
+   "text": "Your inhaler sensor recorded a puff at 7:42 this morning. Log it?",
+   "options": [
+    "Log it",
+    "That wasn't me"
+   ],
+   "safety_line": null
+  },
+  {
+   "id": "PR-2",
+   "kind": "DOSE",
+   "text": "No 8:00 dose of lisinopril has been logged yet. Did you take it?",
+   "options": [
+    "Yes",
+    "No",
+    "Not sure"
+   ],
+   "safety_line": "If you're not sure whether you took it, check your medication's instructions or ask your pharmacist before taking another dose."
+  },
+  {
+   "id": "PR-3",
+   "kind": "MEASURE",
+   "text": "Two evening blood pressure readings are due. Sit with your back supported, rest 5 minutes, arm at heart level.",
+   "options": [
+    "Log readings"
+   ],
+   "safety_line": null
+  }
+ ],
+ "notices": [
+  {
+   "id": "N-LABS",
+   "text": "This year's labs haven't been entered. Kidney function, cholesterol, thyroid and similar can't be monitored, and suggestions are based on your device and logged data only."
+  }
+ ],
+ "medications": [
+  {
+   "id": "MED-1",
+   "name": "Lisinopril",
+   "dose": "10 mg once daily",
+   "start": "2026-09-08",
+   "start_basis": "Logged by you; matches the clinic visit",
+   "adherence": "Logged on 13 of the last 14 days",
+   "sensor": "Pill cap: opened in the dose window on 12 of 14 days",
+   "verification": {
+    "state": "NOT_DETECTABLE",
+    "text": "Blood pressure is measured twice a day, which is too sparse to show a post-dose pattern. Reminders use your schedule only."
+   },
+   "confirmation": {
+    "sensor_class": "CONTAINER_ACCESS",
+    "status_off": "EXPLAINED",
+    "status_on": "EXPLAINED",
+    "label": "Cap opened in the dose window. Opening is recorded, not swallowing."
+   }
+  },
+  {
+   "id": "MED-2",
+   "name": "Metformin",
+   "dose": "1000 mg twice daily",
+   "start": null,
+   "start_basis": "Start date not found in your records or logs",
+   "adherence": "Logged 27 of 28 doses",
+   "sensor": null,
+   "verification": {
+    "state": "NOT_DETECTABLE",
+    "text": "No reliable pattern found for this medication in your data. Reminders use your schedule only."
+   },
+   "confirmation": null
+  },
+  {
+   "id": "MED-3",
+   "name": "Albuterol inhaler",
+   "dose": "2 puffs as needed",
+   "start": "2025-03-02",
+   "start_basis": "Logged by you",
+   "adherence": "Used 5 times in the last 14 days",
+   "sensor": "Inhaler sensor: 5 of 5 uses recorded",
+   "verification": {
+    "state": "QUALIFIED",
+    "text": "After a logged dose, your heart rate usually rises about 9 bpm within 30 minutes. Learned from 21 logged doses; this separates clearly from times without a dose."
+   },
+   "confirmation": {
+    "sensor_class": "DIRECT_DELIVERY",
+    "status_off": "EXPLAINED",
+    "status_on": "VALIDATED",
+    "label": "Puff recorded by the inhaler sensor in the dose window."
+   }
+  }
+ ],
+ "change_windows": [
+  {
+   "id": "CW-1",
+   "anchor": "Lisinopril start on 2026-09-08 (logged by you)",
+   "measure": "Home systolic blood pressure",
+   "target_set_by": "your clinician, visit of 2026-09-08",
+   "pre": {
+    "days": 14,
+    "readings": 28,
+    "mean_sys": 147.2,
+    "mean_dia": 92.3,
+    "daily_spread_sys": 3.2
+   },
+   "post": {
+    "days": 14,
+    "readings": 28,
+    "mean_sys": 136.9,
+    "mean_dia": 87.3
+   },
+   "difference_vs_spread": "LARGER",
+   "adherence": "Doses logged on 13 of 14 days",
+   "challenge": [
+    {
+     "item": "Other changes in the window",
+     "text": "Lower-sodium days began 2026-09-10. Their effect can't be separated from the medication's."
+    },
+    {
+     "item": "Regression to the mean",
+     "text": "The start followed several readings above 150, so some drop would be expected anyway."
+    },
+    {
+     "item": "Measurement change",
+     "text": "None found: same cuff, same times of day."
+    },
+    {
+     "item": "Adherence",
+     "text": "From your logs: 13 of 14 days."
+    }
+   ]
+  }
+ ],
+ "suggestions": [
+  {
+   "id": "SG-1",
+   "area": "Blood pressure",
+   "title": "DASH-style eating",
+   "text": "Build meals around vegetables, fruit, whole grains and low-fat dairy.",
+   "state": "ACTIVE",
+   "effect": "Average systolic drop around 11 mmHg in people with high blood pressure.",
+   "source": "ACC/AHA high blood pressure guideline",
+   "verified": false,
+   "adopted": false
+  },
+  {
+   "id": "SG-2",
+   "area": "Blood pressure",
+   "title": "Lower sodium",
+   "text": "Aim for under 2,300 mg of sodium a day.",
+   "state": "ACTIVE",
+   "effect": "Around 5–6 mmHg.",
+   "source": "ACC/AHA high blood pressure guideline",
+   "verified": false,
+   "adopted": true,
+   "adopted_on": "2026-09-10",
+   "progress": "Logged sodium was under 2,300 mg on 9 of the last 14 days."
+  },
+  {
+   "id": "SG-3",
+   "area": "Blood pressure",
+   "title": "Aerobic activity",
+   "text": "Work up to about 150 minutes a week. Brisk walking counts.",
+   "state": "ACTIVE",
+   "effect": "Around 5–8 mmHg.",
+   "source": "ACC/AHA high blood pressure guideline",
+   "verified": false,
+   "adopted": true,
+   "adopted_on": "2026-09-15",
+   "progress": "152 active minutes in the last 7 days, from your watch."
+  },
+  {
+   "id": "SG-4",
+   "area": "Blood pressure",
+   "title": "Limit alcohol",
+   "text": "No more than 2 drinks a day; fewer is better.",
+   "state": "ACTIVE",
+   "effect": "Around 4 mmHg.",
+   "source": "ACC/AHA high blood pressure guideline",
+   "verified": false,
+   "adopted": false,
+   "note": "Your medication list was checked: alcohol is also noted on the metformin label."
+  },
+  {
+   "id": "SG-5",
+   "area": "Blood pressure",
+   "title": "More potassium from food",
+   "text": "Beans, potatoes, leafy greens and similar foods.",
+   "state": "HELD",
+   "held_reason": "You take lisinopril, and kidney function isn't known from this year's labs. Ask your clinician before increasing potassium.",
+   "source": "ACC/AHA high blood pressure guideline",
+   "verified": false
+  },
+  {
+   "id": "SG-6",
+   "area": "Blood pressure",
+   "title": "Salt substitute",
+   "text": "Potassium-based salt substitutes.",
+   "state": "HELD",
+   "held_reason": "Blocked while you take lisinopril, and held until kidney function is known.",
+   "source": "ACC/AHA high blood pressure guideline",
+   "verified": false
+  },
+  {
+   "id": "SG-7",
+   "area": "Nutrition",
+   "title": "Higher-protein plan",
+   "text": "Raise daily protein toward a higher target.",
+   "state": "HELD",
+   "held_reason": "Available once kidney function is known.",
+   "source": "Dietary Reference Intakes",
+   "verified": false
+  }
+ ],
+ "raises_bp": [
+  {
+   "item": "Ibuprofen",
+   "logged": "3 times in the last 14 days",
+   "text": "Some of what you've logged can raise blood pressure. Ask your pharmacist about alternatives."
+  }
+ ],
+ "labs": {
+  "annual_status": "OVERDUE",
+  "last_entered": "2025-08-14",
+  "ask_to_include": [
+   {
+    "test": "Metabolic panel (kidney, liver, electrolytes)",
+    "why": "Everyone, yearly",
+    "source": "Annual baseline (§27)"
+   },
+   {
+    "test": "A1c",
+    "why": "Diabetes is on your record",
+    "source": "ADA Standards of Care"
+   },
+   {
+    "test": "Urine albumin-to-creatinine ratio",
+    "why": "Diabetes and high blood pressure",
+    "source": "ADA Standards of Care"
+   },
+   {
+    "test": "Lipid panel",
+    "why": "Age and blood pressure history",
+    "source": "USPSTF; ACC/AHA"
+   },
+   {
+    "test": "Vitamin B12",
+    "why": "Long-term metformin, with nerve symptoms on record",
+    "source": "ADA Standards of Care"
+   }
+  ],
+  "unlocks": [
+   "Kidney function monitoring",
+   "Cholesterol monitoring",
+   "More potassium from food",
+   "Salt substitute",
+   "Higher-protein plan"
+  ],
+  "entry_methods": [
+   "Import a PDF or photo of the lab report",
+   "Type values from the report, with the report image attached",
+   "Patient-portal import (planned)"
+  ]
+ },
+ "nutrition": {
+  "date": "2026-10-06",
+  "meals": [
+   {
+    "time": "07:30",
+    "label": "Oatmeal with blueberries, coffee",
+    "method": "Search"
+   },
+   {
+    "time": "12:15",
+    "label": "Turkey sandwich on whole wheat, apple",
+    "method": "Barcode"
+   },
+   {
+    "time": "18:40",
+    "label": "Grilled chicken, rice, green beans",
+    "method": "Photo, confirmed by you"
+   }
+  ],
+  "totals": [
+   {
+    "nutrient": "Sodium",
+    "range": "1,900–2,300 mg",
+    "target": "Under 2,300 mg",
+    "state": "WITHIN"
+   },
+   {
+    "nutrient": "Fiber",
+    "range": "18–22 g",
+    "target": "About 30 g",
+    "state": "BELOW"
+   },
+   {
+    "nutrient": "Potassium",
+    "range": "2,400–2,900 mg",
+    "target": "Held — see suggestions",
+    "state": "HELD"
+   },
+   {
+    "nutrient": "Protein",
+    "range": "85–100 g",
+    "target": "Within general guidance",
+    "state": "WITHIN"
+   },
+   {
+    "nutrient": "Calories",
+    "range": "1,850–2,150",
+    "target": "No target set",
+    "state": "INFO"
+   }
+  ],
+  "interaction_checks": [
+   {
+    "pair": "Alcohol and metformin",
+    "state": "NOTED",
+    "text": "Noted on the metformin label. No alcohol logged this week."
+   },
+   {
+    "pair": "Potassium foods and lisinopril",
+    "state": "GATED",
+    "text": "Potassium suggestions are held."
+   }
+  ],
+  "excluded_note": "Alkaline-diet, detox and pH-balancing programs aren't part of PAi Health because they lack an evidence base."
+ },
+ "vitals": {
+  "bp": [
+   {
+    "id": "BP-2026-08-25-AM",
+    "date": "2026-08-25",
+    "slot": "AM",
+    "systolic": 158,
+    "diastolic": 97,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-08-25-PM",
+    "date": "2026-08-25",
+    "slot": "PM",
+    "systolic": 153,
+    "diastolic": 97,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-08-26-AM",
+    "date": "2026-08-26",
+    "slot": "AM",
+    "systolic": 152,
+    "diastolic": 87,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-08-26-PM",
+    "date": "2026-08-26",
+    "slot": "PM",
+    "systolic": 147,
+    "diastolic": 95,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-08-27-AM",
+    "date": "2026-08-27",
+    "slot": "AM",
+    "systolic": 146,
+    "diastolic": 83,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-08-27-PM",
+    "date": "2026-08-27",
+    "slot": "PM",
+    "systolic": 145,
+    "diastolic": 88,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-08-28-AM",
+    "date": "2026-08-28",
+    "slot": "AM",
+    "systolic": 144,
+    "diastolic": 94,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-08-28-PM",
+    "date": "2026-08-28",
+    "slot": "PM",
+    "systolic": 147,
+    "diastolic": 88,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-08-29-AM",
+    "date": "2026-08-29",
+    "slot": "AM",
+    "systolic": 141,
+    "diastolic": 91,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-08-29-PM",
+    "date": "2026-08-29",
+    "slot": "PM",
+    "systolic": 147,
+    "diastolic": 91,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-08-30-AM",
+    "date": "2026-08-30",
+    "slot": "AM",
+    "systolic": 149,
+    "diastolic": 97,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-08-30-PM",
+    "date": "2026-08-30",
+    "slot": "PM",
+    "systolic": 139,
+    "diastolic": 89,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-08-31-AM",
+    "date": "2026-08-31",
+    "slot": "AM",
+    "systolic": 151,
+    "diastolic": 93,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-08-31-PM",
+    "date": "2026-08-31",
+    "slot": "PM",
+    "systolic": 140,
+    "diastolic": 92,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-01-AM",
+    "date": "2026-09-01",
+    "slot": "AM",
+    "systolic": 151,
+    "diastolic": 98,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-01-PM",
+    "date": "2026-09-01",
+    "slot": "PM",
+    "systolic": 144,
+    "diastolic": 94,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-02-AM",
+    "date": "2026-09-02",
+    "slot": "AM",
+    "systolic": 149,
+    "diastolic": 91,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-02-PM",
+    "date": "2026-09-02",
+    "slot": "PM",
+    "systolic": 152,
+    "diastolic": 91,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-03-AM",
+    "date": "2026-09-03",
+    "slot": "AM",
+    "systolic": 146,
+    "diastolic": 94,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-03-PM",
+    "date": "2026-09-03",
+    "slot": "PM",
+    "systolic": 139,
+    "diastolic": 93,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-04-AM",
+    "date": "2026-09-04",
+    "slot": "AM",
+    "systolic": 149,
+    "diastolic": 96,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-04-PM",
+    "date": "2026-09-04",
+    "slot": "PM",
+    "systolic": 144,
+    "diastolic": 93,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-05-AM",
+    "date": "2026-09-05",
+    "slot": "AM",
+    "systolic": 153,
+    "diastolic": 96,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-05-PM",
+    "date": "2026-09-05",
+    "slot": "PM",
+    "systolic": 143,
+    "diastolic": 94,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-06-AM",
+    "date": "2026-09-06",
+    "slot": "AM",
+    "systolic": 146,
+    "diastolic": 91,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-06-PM",
+    "date": "2026-09-06",
+    "slot": "PM",
+    "systolic": 152,
+    "diastolic": 85,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-07-AM",
+    "date": "2026-09-07",
+    "slot": "AM",
+    "systolic": 148,
+    "diastolic": 98,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-07-PM",
+    "date": "2026-09-07",
+    "slot": "PM",
+    "systolic": 147,
+    "diastolic": 89,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-08-AM",
+    "date": "2026-09-08",
+    "slot": "AM",
+    "systolic": 141,
+    "diastolic": 90,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-08-PM",
+    "date": "2026-09-08",
+    "slot": "PM",
+    "systolic": 136,
+    "diastolic": 91,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-09-AM",
+    "date": "2026-09-09",
+    "slot": "AM",
+    "systolic": 135,
+    "diastolic": 89,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-09-PM",
+    "date": "2026-09-09",
+    "slot": "PM",
+    "systolic": 139,
+    "diastolic": 88,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-10-AM",
+    "date": "2026-09-10",
+    "slot": "AM",
+    "systolic": 142,
+    "diastolic": 93,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-10-PM",
+    "date": "2026-09-10",
+    "slot": "PM",
+    "systolic": 138,
+    "diastolic": 89,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-11-AM",
+    "date": "2026-09-11",
+    "slot": "AM",
+    "systolic": 139,
+    "diastolic": 99,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-11-PM",
+    "date": "2026-09-11",
+    "slot": "PM",
+    "systolic": 143,
+    "diastolic": 84,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-12-AM",
+    "date": "2026-09-12",
+    "slot": "AM",
+    "systolic": 138,
+    "diastolic": 92,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-12-PM",
+    "date": "2026-09-12",
+    "slot": "PM",
+    "systolic": 139,
+    "diastolic": 85,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-13-AM",
+    "date": "2026-09-13",
+    "slot": "AM",
+    "systolic": 135,
+    "diastolic": 85,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-13-PM",
+    "date": "2026-09-13",
+    "slot": "PM",
+    "systolic": 135,
+    "diastolic": 84,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-14-AM",
+    "date": "2026-09-14",
+    "slot": "AM",
+    "systolic": 133,
+    "diastolic": 90,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-14-PM",
+    "date": "2026-09-14",
+    "slot": "PM",
+    "systolic": 141,
+    "diastolic": 85,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-15-AM",
+    "date": "2026-09-15",
+    "slot": "AM",
+    "systolic": 134,
+    "diastolic": 84,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-15-PM",
+    "date": "2026-09-15",
+    "slot": "PM",
+    "systolic": 140,
+    "diastolic": 85,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-16-AM",
+    "date": "2026-09-16",
+    "slot": "AM",
+    "systolic": 129,
+    "diastolic": 85,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-16-PM",
+    "date": "2026-09-16",
+    "slot": "PM",
+    "systolic": 134,
+    "diastolic": 82,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-17-AM",
+    "date": "2026-09-17",
+    "slot": "AM",
+    "systolic": 136,
+    "diastolic": 86,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-17-PM",
+    "date": "2026-09-17",
+    "slot": "PM",
+    "systolic": 142,
+    "diastolic": 86,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-18-AM",
+    "date": "2026-09-18",
+    "slot": "AM",
+    "systolic": 133,
+    "diastolic": 84,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-18-PM",
+    "date": "2026-09-18",
+    "slot": "PM",
+    "systolic": 129,
+    "diastolic": 87,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-19-AM",
+    "date": "2026-09-19",
+    "slot": "AM",
+    "systolic": 134,
+    "diastolic": 87,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-19-PM",
+    "date": "2026-09-19",
+    "slot": "PM",
+    "systolic": 139,
+    "diastolic": 93,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-20-AM",
+    "date": "2026-09-20",
+    "slot": "AM",
+    "systolic": 138,
+    "diastolic": 90,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-20-PM",
+    "date": "2026-09-20",
+    "slot": "PM",
+    "systolic": 135,
+    "diastolic": 84,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-21-AM",
+    "date": "2026-09-21",
+    "slot": "AM",
+    "systolic": 138,
+    "diastolic": 82,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-21-PM",
+    "date": "2026-09-21",
+    "slot": "PM",
+    "systolic": 139,
+    "diastolic": 85,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-22-AM",
+    "date": "2026-09-22",
+    "slot": "AM",
+    "systolic": 132,
+    "diastolic": 88,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-22-PM",
+    "date": "2026-09-22",
+    "slot": "PM",
+    "systolic": 135,
+    "diastolic": 90,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-23-AM",
+    "date": "2026-09-23",
+    "slot": "AM",
+    "systolic": 132,
+    "diastolic": 88,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-23-PM",
+    "date": "2026-09-23",
+    "slot": "PM",
+    "systolic": 139,
+    "diastolic": 84,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-24-AM",
+    "date": "2026-09-24",
+    "slot": "AM",
+    "systolic": 144,
+    "diastolic": 88,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-24-PM",
+    "date": "2026-09-24",
+    "slot": "PM",
+    "systolic": 135,
+    "diastolic": 86,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-25-AM",
+    "date": "2026-09-25",
+    "slot": "AM",
+    "systolic": 136,
+    "diastolic": 80,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-25-PM",
+    "date": "2026-09-25",
+    "slot": "PM",
+    "systolic": 131,
+    "diastolic": 81,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-26-AM",
+    "date": "2026-09-26",
+    "slot": "AM",
+    "systolic": 135,
+    "diastolic": 93,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-26-PM",
+    "date": "2026-09-26",
+    "slot": "PM",
+    "systolic": 130,
+    "diastolic": 91,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-27-AM",
+    "date": "2026-09-27",
+    "slot": "AM",
+    "systolic": 142,
+    "diastolic": 86,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-27-PM",
+    "date": "2026-09-27",
+    "slot": "PM",
+    "systolic": 129,
+    "diastolic": 89,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-28-AM",
+    "date": "2026-09-28",
+    "slot": "AM",
+    "systolic": 135,
+    "diastolic": 82,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-28-PM",
+    "date": "2026-09-28",
+    "slot": "PM",
+    "systolic": 140,
+    "diastolic": 88,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-29-AM",
+    "date": "2026-09-29",
+    "slot": "AM",
+    "systolic": 136,
+    "diastolic": 85,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-29-PM",
+    "date": "2026-09-29",
+    "slot": "PM",
+    "systolic": 127,
+    "diastolic": 90,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-30-AM",
+    "date": "2026-09-30",
+    "slot": "AM",
+    "systolic": 135,
+    "diastolic": 83,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-09-30-PM",
+    "date": "2026-09-30",
+    "slot": "PM",
+    "systolic": 140,
+    "diastolic": 89,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-10-01-AM",
+    "date": "2026-10-01",
+    "slot": "AM",
+    "systolic": 133,
+    "diastolic": 84,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-10-01-PM",
+    "date": "2026-10-01",
+    "slot": "PM",
+    "systolic": 121,
+    "diastolic": 85,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-10-02-AM",
+    "date": "2026-10-02",
+    "slot": "AM",
+    "systolic": 132,
+    "diastolic": 82,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-10-02-PM",
+    "date": "2026-10-02",
+    "slot": "PM",
+    "systolic": 141,
+    "diastolic": 88,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-10-03-AM",
+    "date": "2026-10-03",
+    "slot": "AM",
+    "systolic": 149,
+    "diastolic": 87,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-10-03-PM",
+    "date": "2026-10-03",
+    "slot": "PM",
+    "systolic": 129,
+    "diastolic": 85,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-10-04-AM",
+    "date": "2026-10-04",
+    "slot": "AM",
+    "systolic": 135,
+    "diastolic": 85,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-10-04-PM",
+    "date": "2026-10-04",
+    "slot": "PM",
+    "systolic": 139,
+    "diastolic": 81,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-10-05-AM",
+    "date": "2026-10-05",
+    "slot": "AM",
+    "systolic": 146,
+    "diastolic": 89,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-10-05-PM",
+    "date": "2026-10-05",
+    "slot": "PM",
+    "systolic": 146,
+    "diastolic": 78,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-10-06-AM",
+    "date": "2026-10-06",
+    "slot": "AM",
+    "systolic": 145,
+    "diastolic": 90,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "id": "BP-2026-10-06-PM",
+    "date": "2026-10-06",
+    "slot": "PM",
+    "systolic": 137,
+    "diastolic": 83,
+    "device_class": "HOME_CUFF",
+    "standing": "FIRST_PERSON"
+   }
+  ],
+  "daily": [
+   {
+    "date": "2026-08-25",
+    "resting_hr": 71,
+    "sleep_hours": 7.0,
+    "steps": 7944,
+    "active_minutes": 26,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-08-26",
+    "resting_hr": 69,
+    "sleep_hours": 6.0,
+    "steps": 5426,
+    "active_minutes": 30,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-08-27",
+    "resting_hr": 69,
+    "sleep_hours": 6.7,
+    "steps": 3652,
+    "active_minutes": 15,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-08-28",
+    "resting_hr": 69,
+    "sleep_hours": 6.6,
+    "steps": 5295,
+    "active_minutes": 37,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-08-29",
+    "resting_hr": 67,
+    "sleep_hours": 7.6,
+    "steps": 8966,
+    "active_minutes": 15,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-08-30",
+    "resting_hr": 65,
+    "sleep_hours": 5.9,
+    "steps": 6716,
+    "active_minutes": 18,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-08-31",
+    "resting_hr": 66,
+    "sleep_hours": 7.4,
+    "steps": 3655,
+    "active_minutes": 24,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-01",
+    "resting_hr": 71,
+    "sleep_hours": 6.4,
+    "steps": 4169,
+    "active_minutes": 14,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-02",
+    "resting_hr": 69,
+    "sleep_hours": 6.5,
+    "steps": 8740,
+    "active_minutes": 26,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-03",
+    "resting_hr": 70,
+    "sleep_hours": 5.9,
+    "steps": 5061,
+    "active_minutes": 23,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-04",
+    "resting_hr": 71,
+    "sleep_hours": 6.5,
+    "steps": 8396,
+    "active_minutes": 20,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-05",
+    "resting_hr": 69,
+    "sleep_hours": 6.3,
+    "steps": 6080,
+    "active_minutes": 18,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-06",
+    "resting_hr": 67,
+    "sleep_hours": 7.2,
+    "steps": 1494,
+    "active_minutes": 17,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-07",
+    "resting_hr": 67,
+    "sleep_hours": 6.4,
+    "steps": 6948,
+    "active_minutes": 7,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-08",
+    "resting_hr": 70,
+    "sleep_hours": 5.4,
+    "steps": 6554,
+    "active_minutes": 11,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-09",
+    "resting_hr": 68,
+    "sleep_hours": 6.4,
+    "steps": 5117,
+    "active_minutes": 28,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-10",
+    "resting_hr": 68,
+    "sleep_hours": 6.4,
+    "steps": 6506,
+    "active_minutes": 28,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-11",
+    "resting_hr": 69,
+    "sleep_hours": 7.2,
+    "steps": 7537,
+    "active_minutes": 21,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-12",
+    "resting_hr": 68,
+    "sleep_hours": 6.6,
+    "steps": 6158,
+    "active_minutes": 12,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-13",
+    "resting_hr": 70,
+    "sleep_hours": 6.6,
+    "steps": 7480,
+    "active_minutes": 20,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-14",
+    "resting_hr": 73,
+    "sleep_hours": 6.4,
+    "steps": 5674,
+    "active_minutes": 24,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-15",
+    "resting_hr": 66,
+    "sleep_hours": 6.1,
+    "steps": 5655,
+    "active_minutes": 18,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-16",
+    "resting_hr": 69,
+    "sleep_hours": 6.1,
+    "steps": 5956,
+    "active_minutes": 25,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-17",
+    "resting_hr": 70,
+    "sleep_hours": 6.7,
+    "steps": 7062,
+    "active_minutes": 27,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-18",
+    "resting_hr": 68,
+    "sleep_hours": 5.6,
+    "steps": 5192,
+    "active_minutes": 24,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-19",
+    "resting_hr": 66,
+    "sleep_hours": 6.2,
+    "steps": 8742,
+    "active_minutes": 20,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-20",
+    "resting_hr": 69,
+    "sleep_hours": 6.2,
+    "steps": 6367,
+    "active_minutes": 12,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-21",
+    "resting_hr": 68,
+    "sleep_hours": 6.9,
+    "steps": 4035,
+    "active_minutes": 21,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-22",
+    "resting_hr": 68,
+    "sleep_hours": 6.9,
+    "steps": 4632,
+    "active_minutes": 16,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-23",
+    "resting_hr": 67,
+    "sleep_hours": 5.4,
+    "steps": 8220,
+    "active_minutes": 42,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-24",
+    "resting_hr": 67,
+    "sleep_hours": 7.6,
+    "steps": 6444,
+    "active_minutes": 37,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-25",
+    "resting_hr": 66,
+    "sleep_hours": 7.2,
+    "steps": 8062,
+    "active_minutes": 11,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-26",
+    "resting_hr": 68,
+    "sleep_hours": 5.3,
+    "steps": 5235,
+    "active_minutes": 25,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-27",
+    "resting_hr": 69,
+    "sleep_hours": 5.9,
+    "steps": 5611,
+    "active_minutes": 47,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-28",
+    "resting_hr": 71,
+    "sleep_hours": 5.9,
+    "steps": 3572,
+    "active_minutes": 25,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-29",
+    "resting_hr": 67,
+    "sleep_hours": 6.9,
+    "steps": 7014,
+    "active_minutes": 10,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-09-30",
+    "resting_hr": 68,
+    "sleep_hours": 6.4,
+    "steps": 4656,
+    "active_minutes": 20,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-10-01",
+    "resting_hr": 72,
+    "sleep_hours": 6.9,
+    "steps": 4560,
+    "active_minutes": 24,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-10-02",
+    "resting_hr": 65,
+    "sleep_hours": 6.2,
+    "steps": 6914,
+    "active_minutes": 26,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-10-03",
+    "resting_hr": 71,
+    "sleep_hours": 7.1,
+    "steps": 7315,
+    "active_minutes": 34,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-10-04",
+    "resting_hr": 69,
+    "sleep_hours": 5.6,
+    "steps": 8001,
+    "active_minutes": 20,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-10-05",
+    "resting_hr": 65,
+    "sleep_hours": 6.4,
+    "steps": 4758,
+    "active_minutes": 15,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   },
+   {
+    "date": "2026-10-06",
+    "resting_hr": 68,
+    "sleep_hours": 7.5,
+    "steps": 6320,
+    "active_minutes": 13,
+    "device_class": "WATCH_PPG",
+    "standing": "DEVICE"
+   }
+  ],
+  "glucose": [
+   {
+    "date": "2026-09-23",
+    "fasting_mg_dl": 126,
+    "device_class": "HOME_METER",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "date": "2026-09-24",
+    "fasting_mg_dl": 125,
+    "device_class": "HOME_METER",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "date": "2026-09-25",
+    "fasting_mg_dl": 121,
+    "device_class": "HOME_METER",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "date": "2026-09-26",
+    "fasting_mg_dl": 125,
+    "device_class": "HOME_METER",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "date": "2026-09-27",
+    "fasting_mg_dl": 127,
+    "device_class": "HOME_METER",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "date": "2026-09-28",
+    "fasting_mg_dl": 115,
+    "device_class": "HOME_METER",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "date": "2026-09-29",
+    "fasting_mg_dl": 127,
+    "device_class": "HOME_METER",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "date": "2026-09-30",
+    "fasting_mg_dl": 119,
+    "device_class": "HOME_METER",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "date": "2026-10-01",
+    "fasting_mg_dl": 120,
+    "device_class": "HOME_METER",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "date": "2026-10-02",
+    "fasting_mg_dl": 117,
+    "device_class": "HOME_METER",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "date": "2026-10-03",
+    "fasting_mg_dl": 117,
+    "device_class": "HOME_METER",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "date": "2026-10-04",
+    "fasting_mg_dl": 117,
+    "device_class": "HOME_METER",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "date": "2026-10-05",
+    "fasting_mg_dl": 123,
+    "device_class": "HOME_METER",
+    "standing": "FIRST_PERSON"
+   },
+   {
+    "date": "2026-10-06",
+    "fasting_mg_dl": 128,
+    "device_class": "HOME_METER",
+    "standing": "FIRST_PERSON"
+   }
+  ],
+  "lisinopril_start": "2026-09-08"
+ },
+ "audit": [
+  {
+   "at": "2026-09-01 07:12",
+   "event": "Check-in prompt shown: blood pressure 14-day average above 140/90",
+   "rule": "EW-BP-02 v1"
+  },
+  {
+   "at": "2026-09-08 16:40",
+   "event": "Medication start logged: lisinopril 10 mg",
+   "rule": "user entry"
+  },
+  {
+   "at": "2026-09-10 08:03",
+   "event": "Suggestion adopted: lower sodium",
+   "rule": "user entry"
+  },
+  {
+   "at": "2026-09-15 19:21",
+   "event": "Suggestion adopted: aerobic activity",
+   "rule": "user entry"
+  },
+  {
+   "at": "2026-09-29 09:00",
+   "event": "Albuterol response pattern qualified from 21 logged doses",
+   "rule": "MV-LEARN v1"
+  },
+  {
+   "at": "2026-10-01 09:00",
+   "event": "Annual labs marked overdue",
+   "rule": "LAB-ANNUAL v1"
+  }
+ ]
+}

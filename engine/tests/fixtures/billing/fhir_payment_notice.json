@@ -1,0 +1,20 @@
+{
+ "resourceType": "PaymentNotice",
+ "id": "pn-1",
+ "status": "active",
+ "created": "2026-09-16",
+ "request": {
+  "reference": "Claim/clm-1"
+ },
+ "payment": {
+  "reference": "PaymentReconciliation/pr-1"
+ },
+ "paymentDate": "2026-09-16",
+ "recipient": {
+  "display": "Riverbend Family Clinic"
+ },
+ "amount": {
+  "value": 127.2,
+  "currency": "USD"
+ }
+}

@@ -1,0 +1,1093 @@
+{
+  "fixture_id": "SCENARIO_001",
+  "constitution_version": "MEDICAL_PRIMITIVES v0.3",
+  "status": "DRAFT_FOR_HUMAN_VERIFICATION",
+  "verification": {
+    "authored_by": "Claude (draft)",
+    "verified_by": null,
+    "rule": "Must be checked line-by-line and signed off by a person before it gates the build (§15.2).",
+    "decisions": [
+      {
+        "date": "2026-10-07",
+        "by": "owner (Keith)",
+        "item": "FIXTURE_ISSUES 1",
+        "decision": "List items are Floats without the trigger word; the trigger is recorded in context_triggers."
+      },
+      {
+        "date": "2026-10-07",
+        "by": "owner (Keith)",
+        "item": "FIXTURE_ISSUES 2",
+        "decision": "Section labels are not part of a Float's text."
+      },
+      {
+        "date": "2026-10-07",
+        "by": "owner (Keith)",
+        "item": "FIXTURE_ISSUES 3",
+        "decision": "Unprinted reference unit stays null (§2.5)."
+      },
+      {
+        "date": "2026-10-08",
+        "by": "owner (Keith): no preference; constitution rule applied",
+        "item": "FIXTURE_ISSUES 4",
+        "decision": "No specimen added to concept names (§2.5)."
+      },
+      {
+        "date": "2026-10-08",
+        "by": "owner (Keith): no preference; constitution rule applied",
+        "item": "FIXTURE_ISSUES 5",
+        "decision": "Medication plan status uses CONTINUE_PLANNED (§2.3a)."
+      },
+      {
+        "date": "2026-10-08",
+        "by": "owner (Keith): no preference; constitution rule applied",
+        "item": "FIXTURE_ISSUES 6",
+        "decision": "Sections come only from headers present in the document."
+      },
+      {
+        "date": "2026-10-08",
+        "by": "owner (Keith): no preference; constitution rule applied",
+        "item": "FIXTURE_ISSUES 7",
+        "decision": "Disclaimer is the v0.4 §12.6 text."
+      },
+      {
+        "date": "2026-10-08",
+        "by": "owner (Keith): no preference; constitution rule applied",
+        "item": "FIXTURE_ISSUES 8",
+        "decision": "No-authority variant: no chain; F-12 is an alternative explanation."
+      }
+    ],
+    "status": "DECISIONS_COMPLETE (8/8); line-by-line verification of every value not yet done by a person"
+  },
+  "id_note": "Symbolic IDs. Tests match objects by content; production IDs are content hashes.",
+  "patient": {
+    "age": 55,
+    "sex": "M"
+  },
+  "record_set_signature": "6fd7b7e05e24abc3",
+  "documents": {
+    "DOC-1": {
+      "date": "2023-01-15",
+      "title": "PCP Note",
+      "text": "Patient reports gradual onset of numbness in bilateral feet starting 'around early December 2022'. Denies weakness, bowel/bladder changes. PMH: Type 2 Diabetes. Meds: Metformin 1000mg BID. Labs: Vitamin B12 = 180 pg/mL (Ref: 200-900).",
+      "sha256": "a2ca07536932b1ce22c2f473272aab271923b40d5daff5ecc1528f89d4cb7cce"
+    },
+    "DOC-2": {
+      "date": "2023-03-10",
+      "title": "Neurology Consult",
+      "text": "Patient reports gradual onset of numbness in bilateral feet starting 'around early December 2022'. Denies weakness. Exam: decreased vibration sense in toes. Assessment: Likely diabetic neuropathy, though B12 deficiency remains on differential. Plan: Check MMA, continue Metformin.",
+      "sha256": "6158192c60b18904a043a69f2d8f5e6fdc81ac8cc85dc8f5d8808613bd203373"
+    },
+    "DOC-3": {
+      "date": "2023-04-05",
+      "title": "Lab Results",
+      "text": "Vitamin B12: 140 pmol/L (Ref: 150-600 pmol/L). Note: Unit changed from pg/mL to pmol/L.",
+      "sha256": "71e91a6c8d18156c140d035986b8d7eac6020f2557fc975e7e08f37f4555a863"
+    }
+  },
+  "authority_inputs": [
+    {
+      "id": "AUTH-STUB-01",
+      "status": "TEST_STUB_NOT_A_REAL_CITATION",
+      "text": "[TEST STUB] Metformin use is associated with reduced vitamin B12 levels.",
+      "level": "POPULATION"
+    },
+    {
+      "id": "AUTH-STUB-02",
+      "status": "TEST_STUB_NOT_A_REAL_CITATION",
+      "text": "[TEST STUB] Vitamin B12 deficiency is associated with peripheral neuropathy.",
+      "level": "POPULATION"
+    }
+  ],
+  "expected": {
+    "floats": [
+      {
+        "id": "F-01",
+        "concept": "numbness, bilateral feet",
+        "original_text": "gradual onset of numbness in bilateral feet starting 'around early December 2022'",
+        "speaker": "PATIENT",
+        "kind": "REPORT",
+        "polarity": "AFFIRMED",
+        "certainty": "DEFINITE",
+        "temporality": "CURRENT",
+        "experiencer": "PATIENT",
+        "event_date": {
+          "value": "2022-12 (early)",
+          "precision": "APPROXIMATE",
+          "source": "DOCUMENTED"
+        },
+        "section": "UNLABELED",
+        "provenance": {
+          "document_id": "DOC-1",
+          "document_sha256": "a2ca07536932b1ce22c2f473272aab271923b40d5daff5ecc1528f89d4cb7cce",
+          "page": 1,
+          "char_start": 16,
+          "char_end": 97,
+          "author": null,
+          "author_role": null,
+          "signed_date": null,
+          "relay": "DIRECT"
+        },
+        "root": "R-01",
+        "provenance_lock": "VERIFIED_SPAN",
+        "content_status": "UNVERIFIED"
+      },
+      {
+        "id": "F-02",
+        "concept": "weakness",
+        "original_text": "weakness",
+        "speaker": "PATIENT",
+        "kind": "REPORT",
+        "polarity": "NEGATED",
+        "certainty": "DEFINITE",
+        "temporality": "CURRENT",
+        "experiencer": "PATIENT",
+        "event_date": {
+          "value": "2023-01-15",
+          "precision": "DAY",
+          "source": "ENCOUNTER_DATE"
+        },
+        "section": "UNLABELED",
+        "provenance": {
+          "document_id": "DOC-1",
+          "document_sha256": "a2ca07536932b1ce22c2f473272aab271923b40d5daff5ecc1528f89d4cb7cce",
+          "page": 1,
+          "char_start": 106,
+          "char_end": 114,
+          "author": null,
+          "author_role": null,
+          "signed_date": null,
+          "relay": "DIRECT"
+        },
+        "root": "R-02",
+        "provenance_lock": "VERIFIED_SPAN",
+        "content_status": "UNVERIFIED"
+      },
+      {
+        "id": "F-03",
+        "concept": "bowel changes",
+        "original_text": "bowel/bladder changes",
+        "speaker": "PATIENT",
+        "kind": "REPORT",
+        "polarity": "NEGATED",
+        "certainty": "DEFINITE",
+        "temporality": "CURRENT",
+        "experiencer": "PATIENT",
+        "event_date": {
+          "value": "2023-01-15",
+          "precision": "DAY",
+          "source": "ENCOUNTER_DATE"
+        },
+        "section": "UNLABELED",
+        "provenance": {
+          "document_id": "DOC-1",
+          "document_sha256": "a2ca07536932b1ce22c2f473272aab271923b40d5daff5ecc1528f89d4cb7cce",
+          "page": 1,
+          "char_start": 116,
+          "char_end": 137,
+          "author": null,
+          "author_role": null,
+          "signed_date": null,
+          "relay": "DIRECT"
+        },
+        "root": "R-03",
+        "provenance_lock": "VERIFIED_SPAN",
+        "content_status": "UNVERIFIED",
+        "note": "Negation inherited from 'Denies' in the same list. Split from bladder per one-statement rule."
+      },
+      {
+        "id": "F-04",
+        "concept": "bladder changes",
+        "original_text": "bowel/bladder changes",
+        "speaker": "PATIENT",
+        "kind": "REPORT",
+        "polarity": "NEGATED",
+        "certainty": "DEFINITE",
+        "temporality": "CURRENT",
+        "experiencer": "PATIENT",
+        "event_date": {
+          "value": "2023-01-15",
+          "precision": "DAY",
+          "source": "ENCOUNTER_DATE"
+        },
+        "section": "UNLABELED",
+        "provenance": {
+          "document_id": "DOC-1",
+          "document_sha256": "a2ca07536932b1ce22c2f473272aab271923b40d5daff5ecc1528f89d4cb7cce",
+          "page": 1,
+          "char_start": 116,
+          "char_end": 137,
+          "author": null,
+          "author_role": null,
+          "signed_date": null,
+          "relay": "DIRECT"
+        },
+        "root": "R-04",
+        "provenance_lock": "VERIFIED_SPAN",
+        "content_status": "UNVERIFIED",
+        "note": "Same span as F-03; separate statement."
+      },
+      {
+        "id": "F-05",
+        "concept": "type 2 diabetes mellitus",
+        "original_text": "Type 2 Diabetes",
+        "speaker": "CLINICIAN",
+        "kind": "ASSESSMENT",
+        "polarity": "AFFIRMED",
+        "certainty": "DEFINITE",
+        "temporality": "UNSPECIFIED",
+        "experiencer": "PATIENT",
+        "event_date": {
+          "value": null,
+          "precision": "UNKNOWN",
+          "source": "NONE"
+        },
+        "section": "PMH",
+        "provenance": {
+          "document_id": "DOC-1",
+          "document_sha256": "a2ca07536932b1ce22c2f473272aab271923b40d5daff5ecc1528f89d4cb7cce",
+          "page": 1,
+          "char_start": 144,
+          "char_end": 159,
+          "author": null,
+          "author_role": null,
+          "signed_date": null,
+          "relay": "DIRECT"
+        },
+        "root": "R-05",
+        "provenance_lock": "VERIFIED_SPAN",
+        "content_status": "UNVERIFIED",
+        "note": "Text, not a code: ASSESSMENT, never CODE. 'PMH' label does not establish HISTORICAL (§2.5)."
+      },
+      {
+        "id": "F-06",
+        "concept": "metformin",
+        "original_text": "Metformin 1000mg BID",
+        "speaker": "CLINICIAN",
+        "kind": "MEDICATION_STATUS",
+        "polarity": "AFFIRMED",
+        "certainty": "DEFINITE",
+        "temporality": "CURRENT",
+        "experiencer": "PATIENT",
+        "event_date": {
+          "value": "2023-01-15",
+          "precision": "DAY",
+          "source": "DOCUMENT_DATE_FALLBACK",
+          "meaning": "on or before"
+        },
+        "section": "MEDS",
+        "provenance": {
+          "document_id": "DOC-1",
+          "document_sha256": "a2ca07536932b1ce22c2f473272aab271923b40d5daff5ecc1528f89d4cb7cce",
+          "page": 1,
+          "char_start": 167,
+          "char_end": 187,
+          "author": null,
+          "author_role": null,
+          "signed_date": null,
+          "relay": "DIRECT"
+        },
+        "root": "R-06",
+        "provenance_lock": "VERIFIED_SPAN",
+        "content_status": "UNVERIFIED",
+        "medication": {
+          "drug": "metformin",
+          "dose_text": "1000mg",
+          "route_text": null,
+          "frequency_text": "BID",
+          "med_status": "LISTED",
+          "start_date": "UNKNOWN"
+        },
+        "note": "LISTED only: not started, taken, prescribed or administered at this encounter (§2.4)."
+      },
+      {
+        "id": "F-07",
+        "concept": "vitamin B12",
+        "original_text": "Vitamin B12 = 180 pg/mL (Ref: 200-900)",
+        "speaker": "LAB_INSTRUMENT",
+        "kind": "MEASUREMENT",
+        "polarity": "AFFIRMED",
+        "certainty": "DEFINITE",
+        "temporality": "CURRENT",
+        "experiencer": "PATIENT",
+        "event_date": {
+          "value": "2023-01-15",
+          "precision": "DAY",
+          "source": "DOCUMENT_DATE_FALLBACK",
+          "meaning": "on or before"
+        },
+        "section": "LABS",
+        "provenance": {
+          "document_id": "DOC-1",
+          "document_sha256": "a2ca07536932b1ce22c2f473272aab271923b40d5daff5ecc1528f89d4cb7cce",
+          "page": 1,
+          "char_start": 195,
+          "char_end": 233,
+          "author": null,
+          "author_role": null,
+          "signed_date": null,
+          "relay": "TRANSCRIBED"
+        },
+        "root": "R-07",
+        "provenance_lock": "VERIFIED_SPAN",
+        "content_status": "UNVERIFIED",
+        "value": {
+          "numeric": 180,
+          "unit": "pg/mL",
+          "reference_low": 200,
+          "reference_high": 900,
+          "reference_unit": null,
+          "specimen": null,
+          "method": null,
+          "performing_lab": null,
+          "collected_at": null,
+          "lab_note": null,
+          "primary_report_in_record_set": false
+        },
+        "range_comparison": {
+          "result": "BELOW",
+          "basis": "ENGINE_COMPUTED"
+        },
+        "note": "Transcribed into a clinic note; primary lab report not provided."
+      },
+      {
+        "id": "F-08",
+        "concept": "numbness, bilateral feet",
+        "original_text": "gradual onset of numbness in bilateral feet starting 'around early December 2022'",
+        "speaker": "PATIENT",
+        "kind": "REPORT",
+        "polarity": "AFFIRMED",
+        "certainty": "DEFINITE",
+        "temporality": "CURRENT",
+        "experiencer": "PATIENT",
+        "event_date": {
+          "value": "2022-12 (early)",
+          "precision": "APPROXIMATE",
+          "source": "DOCUMENTED"
+        },
+        "section": "UNLABELED",
+        "provenance": {
+          "document_id": "DOC-2",
+          "document_sha256": "6158192c60b18904a043a69f2d8f5e6fdc81ac8cc85dc8f5d8808613bd203373",
+          "page": 1,
+          "char_start": 16,
+          "char_end": 97,
+          "author": null,
+          "author_role": null,
+          "signed_date": null,
+          "relay": "DIRECT"
+        },
+        "root": "R-01",
+        "provenance_lock": "VERIFIED_SPAN",
+        "content_status": "UNVERIFIED",
+        "note": "Copy-forward of F-01: 12-token span, exact match, shares root R-01. Not a second source."
+      },
+      {
+        "id": "F-09",
+        "concept": "weakness",
+        "original_text": "weakness",
+        "speaker": "PATIENT",
+        "kind": "REPORT",
+        "polarity": "NEGATED",
+        "certainty": "DEFINITE",
+        "temporality": "CURRENT",
+        "experiencer": "PATIENT",
+        "event_date": {
+          "value": "2023-03-10",
+          "precision": "DAY",
+          "source": "ENCOUNTER_DATE"
+        },
+        "section": "UNLABELED",
+        "provenance": {
+          "document_id": "DOC-2",
+          "document_sha256": "6158192c60b18904a043a69f2d8f5e6fdc81ac8cc85dc8f5d8808613bd203373",
+          "page": 1,
+          "char_start": 106,
+          "char_end": 114,
+          "author": null,
+          "author_role": null,
+          "signed_date": null,
+          "relay": "DIRECT"
+        },
+        "root": "R-09",
+        "provenance_lock": "VERIFIED_SPAN",
+        "content_status": "UNVERIFIED",
+        "note": "2-token stock phrase, below copy-forward minimum span: new statement, new root. Different referent from F-02 (different visit): not corroboration."
+      },
+      {
+        "id": "F-10",
+        "concept": "vibration sense, toes, decreased",
+        "original_text": "decreased vibration sense in toes",
+        "speaker": "CLINICIAN",
+        "kind": "OBSERVATION",
+        "polarity": "AFFIRMED",
+        "certainty": "DEFINITE",
+        "temporality": "CURRENT",
+        "experiencer": "PATIENT",
+        "event_date": {
+          "value": "2023-03-10",
+          "precision": "DAY",
+          "source": "ENCOUNTER_DATE"
+        },
+        "section": "EXAM",
+        "provenance": {
+          "document_id": "DOC-2",
+          "document_sha256": "6158192c60b18904a043a69f2d8f5e6fdc81ac8cc85dc8f5d8808613bd203373",
+          "page": 1,
+          "char_start": 122,
+          "char_end": 155,
+          "author": null,
+          "author_role": null,
+          "signed_date": null,
+          "relay": "DIRECT"
+        },
+        "root": "R-10",
+        "provenance_lock": "VERIFIED_SPAN",
+        "content_status": "UNVERIFIED"
+      },
+      {
+        "id": "F-11",
+        "concept": "diabetic neuropathy",
+        "original_text": "Likely diabetic neuropathy",
+        "speaker": "CLINICIAN",
+        "kind": "ASSESSMENT",
+        "polarity": "AFFIRMED",
+        "certainty": "HEDGED",
+        "temporality": "CURRENT",
+        "experiencer": "PATIENT",
+        "event_date": {
+          "value": "2023-03-10",
+          "precision": "DAY",
+          "source": "ENCOUNTER_DATE"
+        },
+        "section": "ASSESSMENT",
+        "provenance": {
+          "document_id": "DOC-2",
+          "document_sha256": "6158192c60b18904a043a69f2d8f5e6fdc81ac8cc85dc8f5d8808613bd203373",
+          "page": 1,
+          "char_start": 169,
+          "char_end": 195,
+          "author": null,
+          "author_role": null,
+          "signed_date": null,
+          "relay": "DIRECT"
+        },
+        "root": "R-11",
+        "provenance_lock": "VERIFIED_SPAN",
+        "content_status": "UNVERIFIED"
+      },
+      {
+        "id": "F-12",
+        "concept": "vitamin B12 deficiency",
+        "original_text": "B12 deficiency remains on differential",
+        "speaker": "CLINICIAN",
+        "kind": "ASSESSMENT",
+        "polarity": "AFFIRMED",
+        "certainty": "HYPOTHETICAL",
+        "temporality": "CURRENT",
+        "experiencer": "PATIENT",
+        "event_date": {
+          "value": "2023-03-10",
+          "precision": "DAY",
+          "source": "ENCOUNTER_DATE"
+        },
+        "section": "ASSESSMENT",
+        "provenance": {
+          "document_id": "DOC-2",
+          "document_sha256": "6158192c60b18904a043a69f2d8f5e6fdc81ac8cc85dc8f5d8808613bd203373",
+          "page": 1,
+          "char_start": 204,
+          "char_end": 242,
+          "author": null,
+          "author_role": null,
+          "signed_date": null,
+          "relay": "DIRECT"
+        },
+        "root": "R-12",
+        "provenance_lock": "VERIFIED_SPAN",
+        "content_status": "UNVERIFIED"
+      },
+      {
+        "id": "F-13",
+        "concept": "methylmalonic acid test",
+        "original_text": "Check MMA",
+        "speaker": "CLINICIAN",
+        "kind": "ACTION",
+        "polarity": "AFFIRMED",
+        "certainty": "DEFINITE",
+        "temporality": "PLANNED",
+        "experiencer": "PATIENT",
+        "event_date": {
+          "value": "2023-03-10",
+          "precision": "DAY",
+          "source": "ENCOUNTER_DATE"
+        },
+        "section": "PLAN",
+        "provenance": {
+          "document_id": "DOC-2",
+          "document_sha256": "6158192c60b18904a043a69f2d8f5e6fdc81ac8cc85dc8f5d8808613bd203373",
+          "page": 1,
+          "char_start": 250,
+          "char_end": 259,
+          "author": null,
+          "author_role": null,
+          "signed_date": null,
+          "relay": "DIRECT"
+        },
+        "root": "R-13",
+        "provenance_lock": "VERIFIED_SPAN",
+        "content_status": "UNVERIFIED",
+        "action_state": "PLANNED",
+        "note": "A plan, not an order and not a result (§2.5)."
+      },
+      {
+        "id": "F-14",
+        "concept": "metformin",
+        "original_text": "continue Metformin",
+        "speaker": "CLINICIAN",
+        "kind": "MEDICATION_STATUS",
+        "polarity": "AFFIRMED",
+        "certainty": "DEFINITE",
+        "temporality": "PLANNED",
+        "experiencer": "PATIENT",
+        "event_date": {
+          "value": "2023-03-10",
+          "precision": "DAY",
+          "source": "ENCOUNTER_DATE"
+        },
+        "section": "PLAN",
+        "provenance": {
+          "document_id": "DOC-2",
+          "document_sha256": "6158192c60b18904a043a69f2d8f5e6fdc81ac8cc85dc8f5d8808613bd203373",
+          "page": 1,
+          "char_start": 261,
+          "char_end": 279,
+          "author": null,
+          "author_role": null,
+          "signed_date": null,
+          "relay": "DIRECT"
+        },
+        "root": "R-14",
+        "provenance_lock": "VERIFIED_SPAN",
+        "content_status": "UNVERIFIED",
+        "medication": {
+          "drug": "metformin",
+          "dose_text": null,
+          "route_text": null,
+          "frequency_text": null,
+          "med_status": "CONTINUE_PLANNED",
+          "start_date": "UNKNOWN"
+        }
+      },
+      {
+        "id": "F-15",
+        "concept": "vitamin B12",
+        "original_text": "Vitamin B12: 140 pmol/L (Ref: 150-600 pmol/L)",
+        "speaker": "LAB_INSTRUMENT",
+        "kind": "MEASUREMENT",
+        "polarity": "AFFIRMED",
+        "certainty": "DEFINITE",
+        "temporality": "CURRENT",
+        "experiencer": "PATIENT",
+        "event_date": {
+          "value": "2023-04-05",
+          "precision": "DAY",
+          "source": "DOCUMENT_DATE_FALLBACK",
+          "meaning": "on or before"
+        },
+        "section": "UNLABELED",
+        "provenance": {
+          "document_id": "DOC-3",
+          "document_sha256": "71e91a6c8d18156c140d035986b8d7eac6020f2557fc975e7e08f37f4555a863",
+          "page": 1,
+          "char_start": 0,
+          "char_end": 45,
+          "author": null,
+          "author_role": null,
+          "signed_date": null,
+          "relay": "DIRECT"
+        },
+        "root": "R-15",
+        "provenance_lock": "VERIFIED_SPAN",
+        "content_status": "UNVERIFIED",
+        "value": {
+          "numeric": 140,
+          "unit": "pmol/L",
+          "reference_low": 150,
+          "reference_high": 600,
+          "reference_unit": "pmol/L",
+          "specimen": null,
+          "method": null,
+          "performing_lab": null,
+          "collected_at": null,
+          "lab_note": "Unit changed from pg/mL to pmol/L.",
+          "primary_report_in_record_set": true
+        },
+        "range_comparison": {
+          "result": "BELOW",
+          "basis": "ENGINE_COMPUTED"
+        }
+      }
+    ],
+    "mixes": [
+      {
+        "id": "M-01",
+        "relation": "SAME_ROOT",
+        "endpoints": [
+          "F-01",
+          "F-08"
+        ],
+        "evidence": {
+          "span_tokens": 12,
+          "similarity": 1.0,
+          "min_span_tokens": 8
+        },
+        "content_status": "UNVERIFIED"
+      },
+      {
+        "id": "M-02",
+        "relation": "LAB_CHANGED_FROM_PRIOR",
+        "endpoints": [
+          "F-07",
+          "F-15"
+        ],
+        "temporal": {
+          "temporal_resolution": "ORDER_ONLY",
+          "order_basis": "REPORT_SEQUENCE",
+          "delta_days": null,
+          "date_basis": [
+            "F-07 fallback 2023-01-15",
+            "F-15 fallback 2023-04-05"
+          ]
+        },
+        "comparability": {
+          "class": "CAUTION",
+          "reasons": [
+            "units differ (declared structural conversion applied)",
+            "performing laboratory not stated for either result",
+            "reference ranges differ after conversion"
+          ]
+        },
+        "conversion": {
+          "factor": 0.73781,
+          "unit": "pmol/L per pg/mL",
+          "basis": "cyanocobalamin molar mass 1355.37 g/mol",
+          "entered_as": "EpiFloat.structural"
+        },
+        "values_pmol_L": {
+          "prior_converted": 132.8,
+          "current": 140
+        },
+        "reference_ranges_pmol_L": {
+          "prior_converted": [
+            147.6,
+            664.0
+          ],
+          "current": [
+            150,
+            600
+          ]
+        },
+        "direction": "INCREASE",
+        "delta_pmol_L": 7.2,
+        "delta_percent": 5.4,
+        "rendered": "Vitamin B12 was documented after the earlier result (based on the order of the reports); after unit conversion the later value is numerically higher. Comparability is limited.",
+        "content_status": "UNVERIFIED"
+      },
+      {
+        "id": "M-03",
+        "relation": "DIAGNOSIS_RECORDED_AFTER_SYMPTOM",
+        "endpoints": [
+          "F-01",
+          "F-11"
+        ],
+        "temporal": {
+          "temporal_resolution": "ORDER_ONLY",
+          "order_basis": "EVENT_DATES",
+          "delta_days": null,
+          "date_basis": [
+            "F-01 APPROXIMATE early Dec 2022",
+            "F-11 ENCOUNTER_DATE 2023-03-10"
+          ]
+        },
+        "rendered": "Diabetic neuropathy was documented after numbness, bilateral feet; the interval cannot be determined from the records.",
+        "content_status": "UNVERIFIED"
+      },
+      {
+        "id": "M-04",
+        "relation": "DIAGNOSIS_RECORDED_AFTER_SYMPTOM",
+        "endpoints": [
+          "F-01",
+          "F-12"
+        ],
+        "temporal": {
+          "temporal_resolution": "ORDER_ONLY",
+          "order_basis": "EVENT_DATES",
+          "delta_days": null,
+          "date_basis": [
+            "F-01 APPROXIMATE early Dec 2022",
+            "F-12 ENCOUNTER_DATE 2023-03-10"
+          ]
+        },
+        "rendered": "Vitamin B12 deficiency was documented after numbness, bilateral feet; the interval cannot be determined from the records.",
+        "content_status": "UNVERIFIED"
+      }
+    ],
+    "mixes_not_created": [
+      {
+        "relation": "SYMPTOM_REPORTED_AFTER_EXPOSURE",
+        "endpoints": [
+          "F-06",
+          "F-01"
+        ],
+        "reason": "INDETERMINATE: metformin date is a fallback list date (on or before 2023-01-15); numbness onset is approximate early Dec 2022. Order cannot be established (§7.2.3; §7.3 exposure date may not be fallback-only)."
+      },
+      {
+        "relation": "INDEPENDENT_AGREEMENT",
+        "endpoints": [
+          "F-02",
+          "F-09"
+        ],
+        "reason": "Different referents: denials at two separate visits are two facts, not corroboration (§4.3.4)."
+      },
+      {
+        "relation": "INDEPENDENT_AGREEMENT",
+        "endpoints": [
+          "F-07",
+          "F-15"
+        ],
+        "reason": "Separate measurements, not corroboration (§4.3.4)."
+      },
+      {
+        "relation": "TREATMENT_FOLLOWED_DIAGNOSIS",
+        "endpoints": [
+          "F-11",
+          "F-14"
+        ],
+        "reason": "Same encounter; position within a note is not temporal order."
+      },
+      {
+        "relation": "TEMPORAL_PRECEDES",
+        "endpoints": [
+          "F-06",
+          "F-07"
+        ],
+        "reason": "Both fallback-dated to the same document; order of metformin listing vs B12 draw cannot be established."
+      }
+    ],
+    "gaps": [
+      {
+        "id": "GAP-01",
+        "sought": [
+          "methylmalonic acid",
+          "MMA"
+        ],
+        "search_scope": [
+          "DOC-1",
+          "DOC-2",
+          "DOC-3"
+        ],
+        "date_window": [
+          "2023-03-10",
+          "2023-04-05"
+        ],
+        "date_window_basis": "from plan date (F-13) to latest record date",
+        "coverage": {
+          "documents_searched": 3,
+          "documents_in_window": 2
+        },
+        "result": "NOT_FOUND",
+        "rendered": "Not found in the provided records searched (3 documents searched, 2 dated within 2023-03-10 to 2023-04-05)."
+      },
+      {
+        "id": "GAP-02",
+        "sought": [
+          "numbness",
+          "neuropathy",
+          "vitamin B12"
+        ],
+        "search_scope": [
+          "DOC-1",
+          "DOC-2",
+          "DOC-3"
+        ],
+        "date_window": [
+          "open",
+          "2022-11-30"
+        ],
+        "date_window_basis": "before approximate symptom onset",
+        "coverage": {
+          "documents_searched": 3,
+          "documents_in_window": 0
+        },
+        "result": "NO_RECORDS_IN_WINDOW",
+        "rendered": "No records from that period were provided (3 documents searched, 0 in window)."
+      },
+      {
+        "id": "GAP-03",
+        "sought": [
+          "metformin start date",
+          "metformin prescribed",
+          "metformin started"
+        ],
+        "search_scope": [
+          "DOC-1",
+          "DOC-2",
+          "DOC-3"
+        ],
+        "date_window": [
+          "open",
+          "2023-04-05"
+        ],
+        "coverage": {
+          "documents_searched": 3,
+          "documents_in_window": 3
+        },
+        "result": "NOT_FOUND",
+        "rendered": "Not found in the provided records searched (3 documents searched, 3 dated within the window)."
+      }
+    ],
+    "flags": [
+      {
+        "id": "FLAG-01",
+        "type": "EXPECTED_ITEM_NOT_FOUND",
+        "cites": [
+          "F-13",
+          "GAP-01"
+        ],
+        "rendered": "EXPECTED_ITEM_NOT_FOUND: A plan to 'Check MMA' is documented (2023-03-10); no corresponding result was found in the records searched."
+      },
+      {
+        "id": "FLAG-02",
+        "type": "UNREVIEWED_RESULT",
+        "cites": [
+          "F-15"
+        ],
+        "rendered": "UNREVIEWED_RESULT: Vitamin B12 result (report dated 2023-04-05) is not referenced by any later document in the records provided."
+      }
+    ],
+    "flags_not_raised": [
+      {
+        "type": "UNEXPLAINED_MEASUREMENT_CHANGE",
+        "reason": "M-02 does not cross a reference range: both results are below their reported ranges."
+      }
+    ],
+    "stir": {
+      "opening": {
+        "opener": "USER",
+        "form": "QUESTION",
+        "verbatim": "Could the metformin be causing the numbness?"
+      },
+      "subject": {
+        "exposure": [
+          "F-06",
+          "F-14"
+        ],
+        "finding": [
+          "F-01",
+          "F-08"
+        ],
+        "rule": "Subject Floats never appear in SUPPORT (§10.1)."
+      },
+      "chain": [
+        {
+          "link": "L1",
+          "from": "metformin",
+          "to": "low vitamin B12",
+          "source": {
+            "type": "AUTHORITY",
+            "id": "AUTH-STUB-01"
+          },
+          "record_evidence": [
+            "F-07.range_comparison",
+            "F-15.range_comparison",
+            "M-02"
+          ],
+          "patient_specific_notes": [
+            "Order of metformin listing vs first B12 result cannot be established (not_created TEMPORAL_PRECEDES F-06/F-07)."
+          ]
+        },
+        {
+          "link": "L2",
+          "from": "vitamin B12 deficiency",
+          "to": "peripheral neuropathy",
+          "source": {
+            "type": "CLINICIAN",
+            "id": "F-12",
+            "also": "AUTH-STUB-02"
+          },
+          "record_evidence": [],
+          "patient_specific_notes": [
+            "Clinician lists B12 deficiency on the differential (HYPOTHETICAL); this is the link's source, not evidence it holds."
+          ]
+        }
+      ],
+      "direct_link": {
+        "from": "metformin",
+        "to": "numbness",
+        "source": null,
+        "note": "No attached source addresses metformin and numbness directly. L1 + L2 must not be rendered as patient-specific metformin -> numbness (§10.3.3)."
+      },
+      "support": [
+        {
+          "cites": "AUTH-STUB-01",
+          "link": "L1",
+          "level": "POPULATION"
+        },
+        {
+          "cites": "AUTH-STUB-02",
+          "link": "L2",
+          "level": "POPULATION"
+        },
+        {
+          "cites": "F-07.range_comparison",
+          "link": "L1/L2 intermediate state",
+          "basis": "ENGINE_COMPUTED"
+        },
+        {
+          "cites": "F-15.range_comparison",
+          "link": "L1/L2 intermediate state",
+          "basis": "ENGINE_COMPUTED"
+        }
+      ],
+      "challenge": [
+        {
+          "checklist": 1,
+          "item": "Alternative explanations",
+          "cites": [
+            "F-11",
+            "F-05"
+          ]
+        },
+        {
+          "checklist": 2,
+          "item": "Pre-existing state",
+          "cites": [
+            "GAP-02"
+          ]
+        },
+        {
+          "checklist": 3,
+          "item": "Measurement variability",
+          "cites": [
+            "M-02"
+          ]
+        },
+        {
+          "checklist": 4,
+          "item": "Natural history / regression to the mean",
+          "status": "NOT_ADDRESSED_NO_SOURCE"
+        },
+        {
+          "checklist": 5,
+          "item": "Concurrent conditions",
+          "cites": [
+            "F-05"
+          ]
+        },
+        {
+          "checklist": 6,
+          "item": "Timing",
+          "cites": [
+            "GAP-03"
+          ],
+          "note": "Records do not establish that metformin preceded numbness onset (not_created SYMPTOM_REPORTED_AFTER_EXPOSURE)."
+        },
+        {
+          "checklist": 7,
+          "item": "Negative findings",
+          "cites": [
+            "F-02",
+            "F-03",
+            "F-04",
+            "F-09"
+          ],
+          "bearing": "UNDETERMINED",
+          "status": "NOT_ADDRESSED_NO_SOURCE",
+          "note": "Listed; no attached source establishes their relevance to the proposition."
+        }
+      ],
+      "non_discriminating": [],
+      "unplaced": [
+        {
+          "cites": "F-10",
+          "reason": "No attached source establishes whether decreased vibration sense bears on the proposition or its alternative. Placing it would require uncited knowledge (§10.1)."
+        }
+      ],
+      "content_status": "UNVERIFIED"
+    },
+    "rendering": {
+      "reference_text": "You asked: \"Could the metformin be causing the numbness?\"\n\nYour records document metformin on your medication list, numbness in both feet reported as starting around early December 2022, and two vitamin B12 results below the reference ranges reported with them. The two results use different units; whether the laboratory or method was the same could not be established from the records provided. After unit conversion, the later value is slightly higher, but comparability is limited.\n\nThe records do not show when metformin was started, so whether it began before the numbness cannot be determined from these documents. No records from before December 2022 were provided.\n\nAttached medical sources address proposed relationships between metformin and B12 levels, and between B12 deficiency and nerve symptoms. These sources describe groups of people and do not by themselves establish what caused your symptoms.\n\nThe neurology consult lists diabetic neuropathy as likely, with B12 deficiency still on the differential. A planned MMA test was not found in the records provided.\n\nQuestions to bring to your clinician:\n- \"Was the MMA test done, and what did it show?\"\n- \"When did I start metformin, compared with when the numbness began?\"\n- \"How would we tell diabetic neuropathy apart from B12-related numbness in my case?\"\n\nPAi Health organizes your records, tracks your data, and offers general wellness suggestions. It does not diagnose, prescribe, or replace your clinician. Decisions belong to you and your licensed clinicians.",
+      "must_include": [
+        "the user's question verbatim, in question form",
+        "metformin as listed (not started/taken/prescribed)",
+        "numbness onset as approximate",
+        "both B12 results below their reported reference ranges",
+        "units differ; laboratory/method comparability not established",
+        "metformin start date not found; order vs numbness undeterminable",
+        "no records before December 2022",
+        "record and authority statements in separate sentences, with the population-level disclaimer",
+        "clinician assessment: diabetic neuropathy likely; B12 deficiency on differential",
+        "planned MMA not found",
+        "the §12.6 disclaimer verbatim"
+      ],
+      "must_not_include": [
+        "different lab",
+        "different labs",
+        "same lab",
+        "started metformin",
+        "taking metformin",
+        "prescribed metformin",
+        "records document two steps",
+        "can cause",
+        "causes",
+        "caused",
+        "led to",
+        "due to",
+        "ruled out",
+        "confirmed",
+        "diagnosed with",
+        "never had",
+        "did not have",
+        "no history of",
+        "was never done",
+        "in early December",
+        "on December"
+      ],
+      "must_not_include_note": "'causing' is permitted only inside the verbatim user question."
+    }
+  },
+  "stronger_claim_failures": [
+    "Any Float content_status above UNVERIFIED",
+    "F-01/F-08 precision other than APPROXIMATE",
+    "F-05 kind CODE, or temporality HISTORICAL",
+    "F-06 med_status other than LISTED, or any start_date",
+    "F-07/F-15 date source other than DOCUMENT_DATE_FALLBACK",
+    "F-07 relay DIRECT",
+    "F-13 action_state ORDERED/PERFORMED/RESULTED",
+    "F-03/F-04 merged into one Float",
+    "Any root shared other than F-01/F-08",
+    "M-02 temporal_resolution EXACT or RANGE, or comparability COMPARABLE/CONVERTIBLE",
+    "Any Mix listed in not_created",
+    "GAP-02 result NOT_FOUND",
+    "Stir opening form ASSERTION or text differing from verbatim",
+    "Any chain link without a source, or a patient-specific metformin->numbness link",
+    "Any subject Float in support",
+    "F-10 placed in support, challenge or non_discriminating",
+    "Any support/challenge item without a cited ID"
+  ],
+  "variant_no_authority": {
+    "inputs": "Same documents, AUTH-STUB-01/02 not attached.",
+    "expected": [
+      "Chain L1 absent (no source).",
+      "No chain links; F-12 (B12 deficiency on differential) is an alternative explanation (checklist 1).",
+      "F-07/F-15 range comparisons unplaced (no link connects the exposure to B12).",
+      "Rendering states no attached medical sources address metformin and B12 or numbness; no population-level sentence."
+    ],
+    "l2_decision": "Without an attached source connecting metformin to B12, no chain link exists; F-12 is placed as an alternative explanation (checklist 1)."
+  },
+  "open_items": [
+    "F-07 reference range in DOC-1 has no unit; pg/mL assumed from the value's unit. Under §2.5 this should arguably be null. Human decision required.",
+    "FLAG-02 depends on 'referenced by a later document'; the matching rule is not yet defined in the constitution.",
+    "GAP-01 window ends at the latest record date; an MMA after 2023-04-05 would not be in scope by construction."
+  ]
+}

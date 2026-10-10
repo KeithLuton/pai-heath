@@ -1,0 +1,2 @@
+# Test-only. Not shipped in the Store package.
+reportlab>=4.0       # BSD   builds PDF fixtures in tests
